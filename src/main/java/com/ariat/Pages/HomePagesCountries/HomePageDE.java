@@ -374,7 +374,7 @@ public class HomePageDE extends BasePage implements List<HomePage> {
 
 	public void assertProductDisplayed(String expectedText) {
 		String text = WebDriverUtils.getElementText(driver, textMsgProduct);
-		assertEquals(text, expectedText, "Product results for:" + text);
+		assertEquals(text, expectedText, "Produktergebnisse fur:" + text);
 	}
 	
 	public void assertProductDisplayedDE(String expectedText) {
