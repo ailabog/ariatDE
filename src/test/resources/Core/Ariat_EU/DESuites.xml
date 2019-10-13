@@ -4,232 +4,72 @@
 <parameter name="environment" value="${environment}" />
 	<test name="DESuites" parallel="none" preserve-order="true">
        <classes>
-                <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDETest" >
-              <methods>
-                      <include name="createAccountTest" />
-                      <include name="returningCustomerTest" />
-                      <include name="checkValidOrderTest" />
-                      <include name="forgotPasswordTest" />
-              </methods>
-                   </class>         
-              <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressDETest" >
-              <methods>
-                      <include name="addAddressDETest" />
-                     
-               </methods>
-            
-              </class>
-              <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressDETest" >
-                  <methods>
-                      <include name="deleteAddressDETest" />
-                      <include name="deleteAddressFromEditDETest" />
-                   </methods>
-           </class>
-              <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressDETest" >
-              
-              <methods>
-                      <include name="editAddressTest" />
-                     
-              </methods>
-               </class>
-              <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressDETest" >
-               <methods>
-                      <include name="loadMoreAddressesFromEditDETest" />
-                      <include name="loadMoreAddressesLeftNavigationDETest" />
-                   </methods>
-                </class>
-              <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressDETest" >
-              <methods>
-                      <include name="makeDefaultAddressDETest" />
-                     
-              </methods>
-             </class>
-              <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.Add_DeleteCreditCardDETest" >
-               <methods>
-                      <include name="add_deleteCreditCardDETest" />
-                     
-              </methods>
-        </class>
-              <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardDETest" >
-               <methods>
-                      <include name="addCreditCardDETest" />
-                     
-              </methods>
-              
-              </class>
-              <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.DeleteCreditCardDETest" >
-              <methods>
-                      <include name="deleteCreditCardFromPaymentInfoDETest" />
-                     
-              </methods>
-             </class>
-              <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardDETest" >
-              <methods>
-                      <include name="makeDefaultCreditCardFromPaymentInfoDETest" />
-                     
-              </methods>
-        </class>
-              <class name="com.ariat.Tests.Search.Countries.SearchDETest" >
-              <methods>
-                      <include name="searchProductTest" />
-                     
-              </methods>
-         </class>
-              <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterDETest" >
-               <methods>
-                      <include name="DEHeader" />
-                       <include name="DEFooter" />
-                     
-              </methods>
-         </class>
-              <class name="com.ariat.Tests.Categories.Countries.MenCategory.Sorting.MenCategoryPaginationSortingDETest" >
-               <methods>
-                      <include name="navigateMenCategory" />
-                     
-              </methods>
-          </class>
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingDETest" >
-                <methods>
-                      <include name="navigateWomenCategory" />
-                     
-              </methods>
-             </class>
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavDETest" >
-              <methods>
-                      <include name="leftNavigationWomenFootwearRidingSubcategories" />
-                      <include name="leftNavigationWomenFootwearCountrySubcategories" />
-                      <include name="leftNavigationWomenFootwearWesternSubcategories" />
-               </methods>
-            </class>
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavDETest" >
-              <methods>
-                      <include name="navigateWomenFootwearCategories" />
-                      <include name="navigateWomenClothingCategoriesTest" />
-                      <include name="navigateWomenAccessoriesCategoriesTest" />
-                       <include name="navigateWomenFeaturedCategoriesTest" />
-               </methods>
-                 </class>
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavDETest" >
-              
-                  <methods>
-                      <include name="topnNavMenFootwearCategories" />
-                      <include name="topNavMenClothingCategoriesTest" />
-                      <include name="topNavmenAccessoriesCategoriesTest" />
-                      <include name="topNavmenFeaturedCategoriesTest" />
-                   </methods>
-             </class>
-              <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationDETest" >
-               <methods>
-                      <include name="myAccountAccessPersonalInfoDETest" />
-                      <include name="myAccountAccessEmailPrefDETest" />
-                      <include name="myAccountAccessAddressesDETest" />
-                      <include name="myAccountAccessPaymentInfoDETest" />
-                      <include name="myAccountAccessOrdersDETest" />
-                      <include name="myAccountAccessWishListDETest" />
-                   </methods>
-          </class>
-              <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationDETest" >
-                  <methods>
-                      <include name="myAccountAccessPersonalInfoDETest" />
-                      <include name="myAccountAccessOrdersDETest" />
-                      <include name="myAccountAccessWishListDETest" />
-                   </methods>
-              </class>
-             <class name ="com.ariat.Tests.Base.KillChromeTests" > 
-            
-              <methods>
-                      <include name="killChrome" />
-               </methods>
-               </class>
-                  
-              <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDETest" >
-                  <methods>
-                      <include name="myAccountAccessPersonalInfoDETest" />
-                  </methods>
-                    </class>   
-              <class name="com.ariat.Tests.Logout.Countries.LogoutDETest" >
-                <methods>
-                      <include name="myAccountAccessPersonalInfoDETest" />
-                  </methods>
-          </class>
-              <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesDETest" >
-               <methods>
-                      <include name="updatePersonalInformationTest" />
-                  </methods>
-      </class>
-              <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationDETest" >
-              
-                  <methods>
-                      <include name="myAccountAccessPersonalInfoDETest" />
-                      <include name="myAccountAccessEmailPrefDETest" />
-                      <include name="myAccountAccessAddressesDETest" />
-                      <include name="myAccountAccessPaymentInfoDETest" />
-                      <include name="myAccountAccessPaymentInfoDETest" />
-               
-                  </methods>
-                    </class>           
-              <class name="com.ariat.Tests.Orders_View.OrderDetailsDETest" >
-              <methods>
-                      <include name="ordersChecksViewAllOrdersTest" />
-                      <include name="orderChecksMyAccountMiddleNavTest" />
-                <include name="orderChecksMyAccountTopNavTest" />       
-               </methods>
-                </class> 
-                   <class name="com.ariat.Tests.Orders_View.OrderStatusDETest" >
-              <methods>
-                      <include name="orderStatusTest" />
-              </methods>
-       </class>
-             <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryDETest" >
-              
-              <methods>
-                      <include name="productPageWomenCategoryAddToWishListLoggedTest" />
-                      <include name="productPageWomenCategoryAddToWishListNotLoggedTest" />
-                      <include name="productPageWomenCategoryAddToWishListCreateAccountTest" />
-                      <include name="productPageWomenCategoryFindSomeoneWishListTest" />
-              </methods>
-                </class>       
-              <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryDETest" >
-              <methods>
-                      <include name="productPageWomenCategoryAddToWishListShareToAFriendTest" />
-                      <include name="productPageWomenCategoryAddToWishListDifferentActionsTest" />
-                      <include name="productPageWomenCategoryAddToWishListAddToCartTest" />
-                      <include name="productPageWomenCategoryAddToWishListRemoveItemTest" />
-              </methods>
-          </class>
-              <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryDETest" >
-               <methods>
-                      <include name="productPageWomenCategoryWriteReviewYesRecommendTest" />
-                      <include name="productPageWomenCategoryWriteReviewNoRecommendTest" />
-                </methods>
-                 </class>    
-              <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryDETest" >
-               <methods>
-                      <include name="productPageWomenCategoryAddToCartTest" />
-                </methods>
-                 </class> 
-              <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardDETest" >
-              
-              <methods>
-                      <include name="checkoutCreateNewOrderBeingLoggedMasterCard" />
-                      <include name="checkoutCreateNewOrderBeingLoggedVisa" />
-              </methods>
-               </class>
-              <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerOtherPayments.CheckoutCreateOrderCustomerOtherPaymentMethodsDETest" >
-                   
-                <methods>
-                      <include name="checkoutCreateNewOrderGuestOtherPaymentMethodsKlarna" />
-                 </methods>    
-                   </class>              
-              <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardDETest" >
-              
-               <methods>
-                      <include name="checkoutCreateNewOrderNotBeingLoggedMasterCard" />
-                      <include name="checkoutCreateNewOrderNotBeingLoggedVisa" />
-                 </methods>   
+                <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountDETest" />
              
-                   </class>
-        
+              <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressDETest" />
+            
+              <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressDETest" />
+              
+              <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressDETest" />
+             
+              <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressDETest" />
+             
+              <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressDETest" />
+             
+              <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.Add_DeleteCreditCardDETest" />
+              
+              <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardDETest" />
+           
+              <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.DeleteCreditCardDETest" />
+             
+              <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardDETest" />
+            
+              <class name="com.ariat.Tests.Search.Countries.SearchDETest" />
+             
+              <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterDETest" />
+             
+              <class name="com.ariat.Tests.Categories.Countries.MenCategory.Sorting.MenCategoryPaginationSortingDETest" />
+             
+              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingDETest" />
+           
+              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavDETest" />
+            
+              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavDETest" />
+            
+              <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavDETest"/>
+              
+              <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationDETest" />
+             
+              <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationDETest" />
+              
+             <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
+                             
+              <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationDETest" />
+              
+              <class name="com.ariat.Tests.Logout.Countries.LogoutDETest" />
+               
+              <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesDETest" />
+             
+              <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationDETest" />
+                  
+              <class name="com.ariat.Tests.Orders_View.OrderDetailsDETest" />
+             
+              <class name="com.ariat.Tests.Orders_View.OrderStatusDETest" />
+            
+             <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryDETest" />
+             
+              <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryDETest" />
+            
+              <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryDETest" />
+             
+              <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryDETest" />
+             
+              <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardDETest" />
+             
+              <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerOtherPayments.CheckoutCreateOrderCustomerOtherPaymentMethodsDETest" />
+                         
+              <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardDETest" />
+             
         </classes>
      </test>
 </suite>
