@@ -114,9 +114,9 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		menCategoryPage.menCategoryDE();
 		menClothingPage = menCategoryPage.returnMenClothingCategoryPageDE();
 		menCategoryPage.menCategoryDE();
-		menClothingOuterwearPage = menClothingPage.returnMenClothingOuterwearCategoryPage();
+		menClothingOuterwearPage = menClothingPage.returnMenClothingOuterwearCategoryPageDE();
 		menCategoryPage.menCategoryDE();
-		menClothingBreechesPage = menClothingPage.returnMenClothingBreechesCategoryPage();
+		menClothingBreechesPage = menClothingPage.returnMenClothingBreechesCategoryPageDE();
 		menCategoryPage.menCategoryDE();
 		menClothingSweatTshirtAndWoodiesPage = menClothingPage.returnMenClothingSweatTshirtAndWoodiesCategoryPage();
 		menCategoryPage.menCategoryDE();
@@ -133,15 +133,15 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		menCategoryPage = homePageDE.returnMenCategoryPage();
 		menCategoryPage.menCategoryDE();
-		menAccessoriesPage = menCategoryPage.returnMenAccessoriesCategoryPage();
+		menAccessoriesPage = menCategoryPage.returnMenAccessoriesCategoryPageDE();
 		menCategoryPage.menCategoryDE();
-		menAccessoriesBagsPage = menAccessoriesPage.returnMenAccessoriesBagsCategoryPage();
+		menAccessoriesBagsPage = menAccessoriesPage.returnMenAccessoriesBagsCategoryPageDE();
 		menCategoryPage.menCategoryDE();
-		menAccessoriesGlovesPage = menAccessoriesPage.returnMenAccessoriesGlovesCategoryPage();
+		menAccessoriesGlovesPage = menAccessoriesPage.returnMenAccessoriesGlovesCategoryPageDE();
 		menCategoryPage.menCategoryDE();
-		menAccessoriesHeadwearPage = menAccessoriesPage.returnMenAccessoriesHeadwearCategoryPage();
+		menAccessoriesHeadwearPage = menAccessoriesPage.returnMenAccessoriesHeadwearCategoryPageDE();
 		menCategoryPage.menCategoryDE();
-		menAccessoriesSocksPage = menAccessoriesPage.returnMenAccessoriesSocksCategoryPage();
+		menAccessoriesSocksPage = menAccessoriesPage.returnMenAccessoriesSocksCategoryPageDE();
 		logger.info("Finishing navigate men Accessories sub-categories test.");
 	}
 
@@ -156,7 +156,7 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		menCategoryPage.menCategoryDE();
 		menFeaturedPage = menCategoryPage.returnMenFeaturedCategoryPage();
 		menCategoryPage.menCategoryDE();
-		menFeaturedTeamCollectionPage = menFeaturedPage.returMenFeaturedTeamCollectionCategoryPage();
+		menFeaturedTeamCollectionPage = menFeaturedPage.returMenFeaturedTeamCollectionCategoryPageDE();
 		menCategoryPage.menCategoryDE();
 		menFeaturedVentTekPage = menFeaturedPage.returnMenFeaturedVentTekCategoryPage();
 		logger.info("Finishing navigate Men Featured sub-categories test.");

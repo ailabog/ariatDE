@@ -41,7 +41,7 @@ public class CreateAccountDETest extends BaseTest {
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
-	public static final String BIRTH_MONTH = "Marz";
+	public static final String BIRTH_MONTH = "April";
 	public static final String BIRTH_DAY = "02";
 
 	public static final String EMAIL = GenerateRandomDataUtils.generateEmail(12);

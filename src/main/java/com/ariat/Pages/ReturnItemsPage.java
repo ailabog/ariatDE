@@ -15,7 +15,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Pages.Main.OrderDetailsPage;
-import com.ariat.Pages.Main.ReturnPolicyPage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class ReturnItemsPage extends BasePage{
@@ -83,14 +82,6 @@ public class ReturnItemsPage extends BasePage{
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
-	}
-	
-	public ReturnPolicyPage returnReturnPolicyPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, returnPolicyLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(returnsPolicyText));
-		return new ReturnPolicyPage(driver);
 	}
 }
 

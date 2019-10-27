@@ -50,13 +50,13 @@ public class MenCategoryPaginationSortingDETest extends BaseTest {
 		menCategoryPage.clickSortUp();
 		menCategoryPage.sortProductWomenCategoryRecommended();
 		menCategoryPage.clickSortUp();
-		menCategoryPage.sortProductWomenCategoryBestSellers();
+		menCategoryPage.sortProductWomenCategoryBestSellersDE();
 		menCategoryPage.clickSortUp();
 		menCategoryPage.sortProductWomenCategoryPriceHighToLow();
-		menCategoryPage.show72ItemsUp();
-		menCategoryPage.show108ItemLinkUp();
-		menCategoryPage.show36ItemsUp();
-		menCategoryPage.nextPaginationUp();
+		menCategoryPage.show72ItemsUpDE();
+		menCategoryPage.show108ItemLinkUpDE();
+		menCategoryPage.show36ItemsUpDE();
+		menCategoryPage.nextPaginationUpDE();
 		menCategoryPage.prevPaginationButtonUp();
 		logger.info("Finishing  sort and navigate pagination test.");
 	}
