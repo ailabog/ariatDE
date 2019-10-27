@@ -46,22 +46,19 @@ public class AddACreditCardPage extends BasePage {
 		logger.info("Entering card owner...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, nameOnTheCardTextBox, cardOwner);
-		}
+	}
 
 	public void selectTypeCard(String type) {
 		logger.info("Selecting the type of the card...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.selectDropDown(driver, typeCardSelect, type);
-		
 	}
 	
 	public void selectTypeCardUS(String type) {
 		logger.info("Selecting the type of the card...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.selectDropDown(driver, typeCardSelectUS, type);
-	
 	}
-
 
 	public void enterCardNo(String number) {
 		logger.info("Selecting the type of the card...");
@@ -79,33 +76,31 @@ public class AddACreditCardPage extends BasePage {
 		logger.info("Selecting expiration month card...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.selectDropDown(driver, expirationMonthSelect, month);
-		}
+	}
 
 	public void selectExpirationYearCard(String year) {
 		logger.info("Selecting expiration year card...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.selectDropDown(driver, expirationYearSelect, year);
-		}
+	}
 
 	public void enterSecurityCode(String cvs) {
 		logger.info("Entering security code...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, securityCodeText, cvs);
-	
 	}
+	
 	public void applyCardCreation() {
 		logger.info("Creating new credit card");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.scroll350Down(driver, applyButton);
 		WebDriverUtils.clickOnElementWithWait(driver, applyButton);
-	
 	}
 
 	public void cancelCardCreation() {
 		logger.info("Canceling the card creation");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, cancelButton);
-	
 	}
 	
      public PaymentInformationPage returnPaymentInformationPage() {

@@ -117,33 +117,33 @@ public class MenCategoryPage extends BasePage{
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 
-	public void sortProductWomenCategoryRecommended() {
+	public void sortProductMenCategoryRecommended() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendedLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
-	public void sortProductWomenCategoryPriceHighToLow() {
+	public void sortProductMenCategoryPriceHighToLow() {
 		WebDriverUtils.clickOnElementWithWait(driver, priceHighToLowLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
-	public void sortProductWomenCategoryPriceLowToHigh() {
+	public void sortProductMenCategoryPriceLowToHigh() {
 		WebDriverUtils.clickOnElementWithWait(driver, priceLowToHighLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
-	public void sortProductWomenCategoryBestSellers() {
+	public void sortProductMenCategoryBestSellers() {
 		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
-	public void sortProductWomenCategoryBestSellersDE() {
+	public void sortProductMenCategoryBestSellersDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLinkDE);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
 	
-	public void sortProductWomenCategoryBestSellersFR() {
+	public void sortProductMenCategoryBestSellersFR() {
 		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLinkFR);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}

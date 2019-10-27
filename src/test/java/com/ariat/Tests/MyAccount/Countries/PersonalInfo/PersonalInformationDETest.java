@@ -18,7 +18,7 @@ import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
- * Personal Information Unite Kingdom test
+ * Personal Information Germany test
  * 
  * @author aila.bogasieru@ariat.com
  *
@@ -55,7 +55,7 @@ public class PersonalInformationDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		personalInformationPage = myAccountPage.returnPersonalInfoPageMiddleNav();

@@ -48,11 +48,11 @@ public class MenCategoryPaginationSortingDETest extends BaseTest {
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		menCategoryPage = homePageDE.returnMenCategoryPage();
 		menCategoryPage.clickSortUp();
-		menCategoryPage.sortProductWomenCategoryRecommended();
+		menCategoryPage.sortProductMenCategoryRecommended();
 		menCategoryPage.clickSortUp();
-		menCategoryPage.sortProductWomenCategoryBestSellersDE();
+		menCategoryPage.sortProductMenCategoryBestSellersDE();
 		menCategoryPage.clickSortUp();
-		menCategoryPage.sortProductWomenCategoryPriceHighToLow();
+		menCategoryPage.sortProductMenCategoryPriceHighToLow();
 		menCategoryPage.show72ItemsUpDE();
 		menCategoryPage.show108ItemLinkUpDE();
 		menCategoryPage.show36ItemsUpDE();

@@ -50,11 +50,11 @@ public class WomenCategoryPaginationSortingDETest extends BaseTest {
 		womenCategoryPage.clickSortUp();
 		womenCategoryPage.sortProductWomenCategoryRecommended();
 		womenCategoryPage.clickSortUp();
-		womenCategoryPage.sortProductWomenCategoryBestSellers();
+		womenCategoryPage.sortProductWomenCategoryBestSellersDE();
 		womenCategoryPage.clickSortUp();
 		womenCategoryPage.sortProductWomenCategoryPriceHighToLow();
-		womenCategoryPage.show72ItemsUp();
-		womenCategoryPage.show108ItemLinkUp();
+		womenCategoryPage.show72ItemsUpDE();
+		womenCategoryPage.show108ItemLinkUpDE();
 		womenCategoryPage.show36ItemsUp();
 		womenCategoryPage.nextPaginationUp();
 		womenCategoryPage.prevPaginationButtonUp();

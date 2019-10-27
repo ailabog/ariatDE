@@ -37,7 +37,7 @@ public class HeaderAndFooterDETest extends BaseTest{
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority=0)
+	@Test
 	public void DEHeader() {
 		logger.info("Starting the check for Header Germany elements:");
 		homePage = new HomePage(new ChromeDriver());

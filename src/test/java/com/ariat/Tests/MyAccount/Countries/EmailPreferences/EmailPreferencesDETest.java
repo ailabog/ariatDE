@@ -59,7 +59,7 @@ public class EmailPreferencesDETest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		emailPreferencesPage = myAccountPage.returnEmailPreferencePageLeftNav();
+		emailPreferencesPage = myAccountPage.returnEmailPreferencePageLeftNavDE();
 		emailPreferencesPage.ariatProductsCheck("FASHION");
 		emailPreferencesPage.saveEditsClick();
 		logger.info("Update personal information test ended...");

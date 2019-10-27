@@ -130,22 +130,6 @@ public class WomenFootwearSubcategoriesLeftNavDETest extends BaseTest {
 	}
 
 	
-
-	@Test(priority = 3)
-	public void leftNavigationMenFootwearCasualShoesSubcategories() {
-		logger.info("Starting left navigation Men Footwear Casual shoes sub-category test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		womenCategoryPage = homePageDE.returnWomenCategoryPage();
-		womenFootwearPage = womenCategoryPage.returnWomenFootwearPageDE();
-		womenFootwearCasualShoesPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
-		womenFootwearCasual = womenFootwearCasualShoesPage.returnWomenFootwearCasualShoesPageCategoryPageLeftNav();
-		womenFootwearSneakersPage = womenFootwearCasualShoesPage.returnWomenFashionSneakersCategoryPageLeftNav();
-		logger.info("Finishing left navigation Men Footwear Casual shoes sub-category test.");
-	}
-	
 	@AfterTest
 	public void clearBrowserSession() {
 		KillChrome kill = new KillChrome();
@@ -178,8 +162,5 @@ public class WomenFootwearSubcategoriesLeftNavDETest extends BaseTest {
 		womenFootwearWesternPerformancePage.quit();
 		womenFootwearWesternFashionPage.quit();
 
-		womenFootwearCasualShoesPage.quit();
-		womenFootwearSneakersPage.quit();
-		womenFootwearCasual.quit();
 	}
 }
