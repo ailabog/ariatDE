@@ -20,7 +20,7 @@ import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
- * Tests for add & make default credit card United Kingdom
+ * Tests for add & make default credit card Germany
  * 
  * @author aila.bogasieru@ariat.com
  *

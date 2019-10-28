@@ -21,7 +21,7 @@ import com.ariat.Pages.Header.SignInPage;
 
 
 /**
- * Tests for Add Credit card United Kingdom
+ * Tests for Add Credit card Germany
  * @author aila.bogasieru@ariat.com
  *
  */

@@ -15,7 +15,7 @@ import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
 
 /**
- * Search product United Kingdom test
+ * Search product Germany test
  * 
  * @author aila.bogasieru@ariat.com
  *

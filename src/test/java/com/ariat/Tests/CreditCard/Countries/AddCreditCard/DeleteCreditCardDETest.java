@@ -20,7 +20,7 @@ import com.ariat.Pages.Header.SignInPage;
 
 
 /**
- * Tests for delete credit card United Kingdom
+ * Tests for delete credit card Germany
  * @author aila.bogasieru@ariat.com
  *
  */
