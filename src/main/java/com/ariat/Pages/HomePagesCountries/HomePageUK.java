@@ -59,7 +59,6 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By countrySelectorWindow = By.xpath("//*[@id=\"ext-gen44\"]/body/div[10]");
-
 	private By emailSubscriptionTextBoxFooter = By.name("email");
 	private By subscribeButtonFooter = By.name("submit");
 	private By facebookIcon = By
@@ -77,8 +76,6 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 
 	private By orderStatusFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[1]/li[1]/a");
 	private By returnsFooter = By.cssSelector("(.col-xs-12:nth-child(1) li:nth-child(2) > a");
-
-	private By returnsFooterText = By.xpath("//h1[text()='Returns']");
 	private By trackYourOrderFooterLink = By.xpath("(//a[contains(text(),'Track Your Order')])[2]");
 	private By trackYourOrderFooterText = By.xpath("//h1[text()='TRACK YOUR ORDER']");
 	private By warrantyFooter = By.xpath("(//a[contains(text(),'Warranty')])[2]");
@@ -131,7 +128,6 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By myAccountText = By.xpath("//h2[text()='Returning customer']");
 
 	private By aboutUsHeader = By.linkText("About Us");
-	private By closeButton = By.xpath("//div[text()='closeButton']");
 	private By ridingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[1]/a");
 
 	public void checkElementsHeader() {

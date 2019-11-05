@@ -20,8 +20,6 @@ public class CheckoutProcessPage extends BasePage {
 
 	private By editBagLink = By.xpath("//button[@class='el-button summary__edit el-button--text']");
 	private By arrowCountry = By.xpath("//span[@class='el-input__suffix']");
-	//private By selectOption = By.xpath("//li//span[text()='Austria']");
-	
 	private By selectOption = By.xpath("//li//span[contains(text(), 'Austria')]");
 	private By selectOptionBE = By.xpath("//li//span[contains(text(), 'Belgium')]");
 	private By selectOptionDE = By.xpath("//li//span[contains(text(), 'Deutschland')]");
@@ -51,18 +49,11 @@ public class CheckoutProcessPage extends BasePage {
 	private By promoCodeTxtBox = By.xpath("//input[@placeholder='Promo code']");
 	private By expandGiftCard = By.xpath("//i[text()='Gift card']");
 	private By expandPromoCode = By.xpath("//i[text()='Promo code']");
-	private By selectState = By.xpath("//span[text()='Arizona']");
 	private By checkoutBtn = By.xpath("//div[@data-funding-source='paypal']");
 	private By nextPaymentButton = By.cssSelector(".el-button > span > span");
-	private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
 	private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
 	private By signInLink = By.xpath("//a[text()='Sign In']");
-	private By emailTxtBoxPayPal = By.id("email");
-	private By passwordTxtBoxPaypal = By.xpath("//div[@id='main']//input[@id='password']");
-	private By confirmPayPal = By.id("confirmButtonTop");
-	private By nextBtnPayPal = By.id("btnNext");
-	private By loginPayPal = By.id("btnLogin");
-
+	
 	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
 	}
@@ -109,14 +100,6 @@ public class CheckoutProcessPage extends BasePage {
 		}
 	}
 
-	public void selectState() {
-		logger.info("Selecting state..");
-		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, selectState);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
 	public void enterFName(String nameValue) {
 		logger.info("Entering first name..");
 		WebDriverUtils.enterTextBox(driver, firstName, nameValue);
@@ -125,11 +108,6 @@ public class CheckoutProcessPage extends BasePage {
 
 	public void closeWindowAddress() {
 		WebDriverUtils.clickOnElementWithWait(driver, closeWindowAddressBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void useAddressAsItIs() {
-		WebDriverUtils.clickOnElementWithWait(driver, useAddressAsItIsBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -255,57 +233,6 @@ public class CheckoutProcessPage extends BasePage {
 	public void enterPromoCode(String promoCodeValue) {
 		logger.info("Entering promo code..");
 		WebDriverUtils.enterTextBox(driver, promoCodeTxtBox, promoCodeValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterEmailPayPal(String emailValue) {
-		logger.info("Entering email..");
-		String winHandleBefore = driver.getWindowHandle();
-		// Perform the click operation that opens new window
-		// Switch to new window opened
-		for (String winHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(winHandle);
-		}
-		// Perform the actions on new window
-		// WebDriverUtils.findElement(driver, window);
-		WebDriverUtils.enterTextBox(driver, emailTxtBoxPayPal, emailValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		// driver.close();
-		// Switch back to original browser (first window)
-		// driver.switchTo().window(winHandleBefore);
-		// Continue with original browser (first window)
-	}
-
-	public void nextBtnPayPal() {
-		WebDriverUtils.clickOnElementWithWait(driver, nextBtnPayPal);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void clickConfirmPayPal() {
-		logger.info("Confirm paypal payment into PayPal Account..");
-		String winHandleBefore = driver.getWindowHandle();
-		// Perform the click operation that opens new window
-		// Switch to new window opened
-		for (String winHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(winHandle);
-		}
-		WebDriverUtils.clickOnElementWithWait(driver, confirmPayPal);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-		// driver.close();
-		// Switch back to original browser (first window)
-		// driver.switchTo().window(winHandleBefore);
-		// Continue with original browser (first window)
-	}
-
-	public void enterPasswordPayPal(String passwordValue) {
-		logger.info("Entering password..");
-		WebDriverUtils.enterTextBox(driver, passwordTxtBoxPaypal, passwordValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void clickLoginPayPal() {
-		logger.info("Loging into PayPal Account..");
-		WebDriverUtils.clickOnElementWithWait(driver, loginPayPal);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 

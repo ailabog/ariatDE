@@ -41,16 +41,6 @@ public class EmailPreferencePage extends BasePage {
 	private By monthSelect = By.id("dwfrm_profile_customer_customProfile_birthdayMonth");
 	private By daySelect = By.id("dwfrm_profile_customer_customProfile_birthdayDay");
 	
-	private By emailTxtBoxUS = By.id("ctl00_cphContent_txtEmail");
-	private By confirmEmailTxtBoxUS = By.id("ctl00_cphContent_txtConfirmEmail");
-	private By fNameTxtBoxUS = By.id("ctl00_cphContent_firstname");
-	private By lNameTxtBoxUS = By.id("ctl00_cphContent_lastname");
-	private By genderCheckUS = By.id("ctl00_cphContent_Female");
-	private By monthSelectUS = By.id("ctl00_cphContent_ddlBMonth");
-	private By daySelectUS = By.id("ctl00_cphContent_ddlBDay");
-	private By yearSelectUS = By.id("ctl00_cphContent_ddlBYear");
-	private By saveprefBtn = By.xpath("//input[@value='SAVE PREFERENCES']");
-
 	public EmailPreferencePage(WebDriver driver) {
 		super(driver);
 	}
@@ -133,15 +123,8 @@ public class EmailPreferencePage extends BasePage {
 		WebDriverUtils.selectVisibleText(driver, daySelect, dayValue);
 		
 	}
-	
-	
-	
-	public void savePrefUS() {
-		logger.info("Saving email preferences..");
-		WebDriverUtils.clickOnElementWithWait(driver, saveprefBtn);
-	}
-	
-	
+		
+		
 	public void saveEditsClick() {
 		WebDriverUtils.scroll500Down(driver, saveEditsButton);
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
@@ -149,39 +132,6 @@ public class EmailPreferencePage extends BasePage {
 		logger.info("Changes were saved");
 	}
 	
-	public void enterEmailUS(String emailValue) {
-		logger.info("Entering email..");
-		WebDriverUtils.enterTextBox(driver, emailTxtBoxUS, emailValue);
-	}
-	
-	public void enterConfirmEmailUS(String confirmEmailValue) {
-		logger.info("Entering email..");
-		WebDriverUtils.enterTextBox(driver, confirmEmailTxtBoxUS, confirmEmailValue);
-	}
-	
-	public void enterFNameUS(String fName) {
-		logger.info("Entering First name..");
-		WebDriverUtils.enterTextBox(driver, fNameTxtBoxUS, fName);
-	}
-	
-	public void enterLNameUS(String lName) {
-		logger.info("Entering Last name..");
-		WebDriverUtils.enterTextBox(driver, lNameTxtBoxUS, lName);
-	}
-
-	public void checkGenderFemaleUS() {
-		WebDriverUtils.clickOnElementWithWait(driver, genderCheckUS);
-	}
-	
-	public void selectBirthDataUS(String monthValue, String dayValue, String yearValue) {
-		logger.info("Selecting month of birth..");
-		WebDriverUtils.selectVisibleText(driver, monthSelectUS, monthValue);
-		logger.info("Selecting day of birth..");
-		WebDriverUtils.selectVisibleText(driver, daySelectUS, dayValue);
-		logger.info("Selecting year of birth..");
-		WebDriverUtils.selectVisibleText(driver, yearSelectUS, dayValue);
-	}
-
 	public void savePreferencesClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, savePreferencesButton);
 	

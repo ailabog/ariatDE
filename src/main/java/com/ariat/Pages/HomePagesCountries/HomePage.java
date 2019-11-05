@@ -53,26 +53,9 @@ public class HomePage extends BasePage implements List<HomePage> {
 		logger.info("Selecting EU  Ariat store country...");
 
 		switch (euCountry.getCountryName()) {
-	
-       //local version
-		/*case "(United Kingdom)":
-			logger.info("I choose English United Kingdom as location");
-			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
-				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-				WebDriverUtils.scrolltoElement(driver, euCountry.UK.getLocator());
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-				logger.info("Saving location...");
-				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-				WebDriverUtils.clickOnElementWithWait(driver, euCountry.UK.getLocator());
-			}
-			return new HomePageUK(driver);*/
-			
-		//Jenkins version 
-			case "(United Kingdom)":
+
+		// Jenkins version
+		case "(United Kingdom)":
 			logger.info("I choose English United Kingdom as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
@@ -90,7 +73,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 			}
 			return new HomePageUK(driver);
 
-			case "(Deutschland)":
+		case "(Deutschland)":
 			logger.info("I choose Deutsch Deutschland as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
@@ -104,7 +87,6 @@ public class HomePage extends BasePage implements List<HomePage> {
 			}
 			return new HomePageDE(driver);
 
-		
 		default:
 			throw new RuntimeException("Country" + euCountry + "not supported");
 		}

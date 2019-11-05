@@ -41,10 +41,8 @@ public class MyWishListPage extends BasePage {
 	private By editItemWishList = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[3]/div[2]/a[1]");
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
 	private By goBackToWishListEdit = By.cssSelector("span.ui-icon.ui-icon-closethick");
-    
     private By noIteminWishListText = By.xpath("//*[contains[text(), 'You have no items on your wishlist.']");
-    private By ItemsTable = By.id("id-b74204a4db5dec790e1f5d43c0");
-	 
+   	 
     private boolean noItemWishList;
     
     public MyWishListPage(WebDriver driver) {
@@ -61,19 +59,6 @@ public class MyWishListPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, shareEmailListButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-	public void sendListToAFriendFR(String nameFrined, String email) {
-		logger.info("Sending my wish list to a friend");
-		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButtonFR);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, nameTxtBox, nameFrined);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, emailFriendTextBox, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, shareEmailListButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
 	}
 	
 	public void sendListToAFriendDE(String nameFrined, String email) {
