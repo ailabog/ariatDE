@@ -1,7 +1,6 @@
 package com.ariat.Tests.Product.WomenCategory.Countries.AddToCart;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -58,20 +57,14 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
     
     @AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
-		homePage.quit();
+    	homePage.quit();
 		homePageUK.quit();
 		homePageDE.quit();
 		womenCategoryPage.quit();
@@ -79,5 +72,7 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		womenAccessoriesGlovesPage.quit();
 		glovesProductPage.quit();
 		myBagPage.quit();
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }
