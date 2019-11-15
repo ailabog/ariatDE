@@ -66,7 +66,7 @@ public class PersonalInformationDETest extends BaseTest {
 		logger.info("Update personal information test ended...");
 	}
 	
-	@AfterTest
+/*	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
@@ -76,5 +76,5 @@ public class PersonalInformationDETest extends BaseTest {
 		personalInformationPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+    }*/
 }

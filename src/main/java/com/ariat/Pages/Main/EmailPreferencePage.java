@@ -121,7 +121,6 @@ public class EmailPreferencePage extends BasePage {
 		WebDriverUtils.selectVisibleText(driver, monthSelect, monthValue);
 		logger.info("Selecting day of birth..");
 		WebDriverUtils.selectVisibleText(driver, daySelect, dayValue);
-		
 	}
 		
 		

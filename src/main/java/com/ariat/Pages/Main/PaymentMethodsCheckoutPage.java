@@ -17,7 +17,6 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 			"//*[@id=\"app\"]/main/div/div[2]/form[2]/div[2]/div/div[2]/form/div[6]/div/div/div/div[1]/div/span/span/i");
 	private By optionCardMasterCard = By.xpath("//span[text()='MasterCard']");
 	private By optionCardVisa = By.xpath("//span[text()='Visa']");
-	private By expirationDateMonth = By.xpath("//span[text()='June']");
 	private By expirationDateMonthDE = By.xpath("//span[contains(text(),'Februar')]");
 	private By expirationDateYear = By.xpath("//span[text()='2024']");
 	private By securityCode = By.cssSelector(".checkout__card-cvn .el-input__inner");
@@ -144,16 +143,6 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void selectExpirationMonth() {
-		logger.info("Selecting expiration month credit card..");
-		WebDriverUtils.scroll350Down(driver, arrowExpMonth);
-		WebDriverUtils.clickOnElementWithWait(driver, arrowExpMonth);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonth);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	
 	public void selectExpirationMonthDE() {
 		logger.info("Selecting expiration month credit card..");
 		WebDriverUtils.scroll350Down(driver, arrowExpMonth);

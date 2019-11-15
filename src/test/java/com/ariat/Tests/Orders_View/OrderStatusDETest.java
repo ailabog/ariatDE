@@ -55,7 +55,7 @@ public class OrderStatusDETest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myOrdersPage = myAccountPage.returnMyOrdersPageOrderStatusMiddleNav();
+		myOrdersPage = myAccountPage.returnMyOrdersPageOrderStatusMiddleNavDE();
 		logger.info("Finishing order status test...");
 	}
 	

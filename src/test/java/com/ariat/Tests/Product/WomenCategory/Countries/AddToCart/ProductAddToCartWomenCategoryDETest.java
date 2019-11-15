@@ -54,11 +54,12 @@ public class ProductAddToCartWomenCategoryDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
-		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
+		myBagPage.removeProductDE();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
     

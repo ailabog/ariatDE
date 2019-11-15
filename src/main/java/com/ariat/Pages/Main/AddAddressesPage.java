@@ -203,22 +203,6 @@ public class AddAddressesPage extends BasePage {
 	}
 	
 	
-	public AddressesPage returnAddressesFromEditPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, editAddressButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesText));
-		return new AddressesPage(driver);
-	}
-	
-	public AddressesPage returnAddressesFromEditDeletePage() {
-		WebDriverUtils.scrollMiddlePage(driver, deleteAddressButton);
-		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(addressesText));
-		return new AddressesPage(driver);
-	}
-	
 	public AddressesPage returnAddressesFromEditDeletePageDE() {
 		WebDriverUtils.scrollElementToPosition(driver, deleteAddressButtonDE);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);

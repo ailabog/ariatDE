@@ -74,7 +74,7 @@ public class AddCreditCardDETest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
+		paymentInfoPage.checkCreditCardDE(CARD_OWNER, typeCard.VISA.getName(), expirationDate);
 		logger.info("Finishing add a credit card Germany test");
   } 
 	

@@ -17,7 +17,6 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class MenFeaturedPage extends BasePage{
 	
-	private By menFeaturedTeamCollectionCategory = By.linkText("Team Collection");
 	private By menFeaturedTeamCollectionCategoryDE = By.linkText("Team Kollektion");
 	private By menFeaturedTeamCollectionText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By menFeaturedVentTekCategory = By.linkText("VentTEK Western Boots");
@@ -29,12 +28,6 @@ public class MenFeaturedPage extends BasePage{
 	}
 	
 
-	public MenFeaturedTeamCollectionPage returMenFeaturedTeamCollectionCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, menFeaturedTeamCollectionCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menFeaturedTeamCollectionText));
-		return new MenFeaturedTeamCollectionPage(driver);
-	}
 	
 	public MenFeaturedTeamCollectionPage returMenFeaturedTeamCollectionCategoryPageDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, menFeaturedTeamCollectionCategoryDE);

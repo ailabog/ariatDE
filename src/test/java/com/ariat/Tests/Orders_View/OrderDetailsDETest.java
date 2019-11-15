@@ -85,11 +85,11 @@ public class OrderDetailsDETest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myOrdersPage = myAccountPage.returnMyOrdersPageTopNav();
+		myOrdersPage = myAccountPage.returnMyOrdersPageTopNavDE();
 		logger.info("Finishing orders check information orders test.");
 	}
 	

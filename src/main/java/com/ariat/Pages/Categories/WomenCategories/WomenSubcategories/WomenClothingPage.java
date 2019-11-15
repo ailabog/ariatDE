@@ -39,7 +39,6 @@ public class WomenClothingPage extends BasePage{
 	private By womenClothingBreechesAndTightsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By breechText = By.xpath("//*contains[text(),'Whipstitch Knee Patch Breech']");
 	private By breechProduct = By.cssSelector("#d4131ac676fae12f026a30c6aa .psd-4-full-width-video-module-1__image");
-	private By breechesAndTightsCategory = By.linkText("Breeches & Tights");
 	private By breechesAndTightsCategoryDE = By.linkText("Schränken Sie Ihre Suche ein");
 	 
 	public WomenClothingPage(WebDriver driver) {
@@ -82,13 +81,6 @@ public class WomenClothingPage extends BasePage{
 		return new WomenClothingBreechesAndTightsPage(driver);
 	}
 
-	public BreechProductPage returnBreechProductPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, breechesAndTightsCategory);
-		WebDriverUtils.clickOnElementWithWait(driver, breechProduct);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(breechText));
-		return new BreechProductPage(driver);
-	}
 	
 	public BreechProductPage returnBreechProductPageDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, breechesAndTightsCategoryDE);

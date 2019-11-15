@@ -70,7 +70,6 @@ public class MyAccountWishListPage extends BasePage {
 		}
 	}
 
-
 	public void returningPassword(String password) {
 		logger.info("Entering information for an existing customer: password", password);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);

@@ -43,25 +43,11 @@ public class MenAccessoriesPage extends BasePage{
 	
 	//Top navigation
 	
-	public MenAccessoriesHeadwearPage returnMenAccessoriesHeadwearCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, menAccessoriesHeadwearCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesHeadwearText));
-		return new MenAccessoriesHeadwearPage(driver);
-	}
-	
 	public MenAccessoriesHeadwearPage returnMenAccessoriesHeadwearCategoryPageDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, menAccessoriesHeadwearCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesHeadwearText));
 		return new MenAccessoriesHeadwearPage(driver);
-	}
-	
-	public MenAccessoriesGlovesPage returnMenAccessoriesGlovesCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, menAccessoriesGlovesCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesGlovesText));
-		return new MenAccessoriesGlovesPage(driver);
 	}
 	
 	public MenAccessoriesGlovesPage returnMenAccessoriesGlovesCategoryPageDE() {
@@ -71,25 +57,11 @@ public class MenAccessoriesPage extends BasePage{
 		return new MenAccessoriesGlovesPage(driver);
 	}
 	
-	public MenAccessoriesBagsPage returnMenAccessoriesBagsCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, menAccessoriesBagsCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesBagsText));
-		return new MenAccessoriesBagsPage(driver);
-	}
-	
 	public MenAccessoriesBagsPage returnMenAccessoriesBagsCategoryPageDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, menAccessoriesBagsCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesBagsText));
 		return new MenAccessoriesBagsPage(driver);
-	}
-	
-	public MenAccessoriesSocksPage returnMenAccessoriesSocksCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, menAccessoriesSocksCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesSocksText));
-		return new MenAccessoriesSocksPage(driver);
 	}
 	
 	public MenAccessoriesSocksPage returnMenAccessoriesSocksCategoryPageDE() {

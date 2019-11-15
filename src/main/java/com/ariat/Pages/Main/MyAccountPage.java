@@ -32,7 +32,6 @@ public class MyAccountPage extends BasePage {
 	private By emailPreferencesLink = By.xpath("//a[@title='Show or update your email preference']");
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
-	private By paymentInformationLink = By.xpath("//a[text()='Payment information']");
 	private By paymentInformationLinkDE = By.xpath("//a[text()='Zahlungsinformationen']");
 	private By paymentInformationText = By.className("//*contains[text(),'Credit card information']");
 	private By myOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[6]/a");
@@ -53,9 +52,7 @@ public class MyAccountPage extends BasePage {
 	private By addCardLink = By.xpath("//a[text()='Add Card']");
 	private By addCardLinkDE = By.xpath("//a[text()='Karte hinzufügen']");
 	private By viewAllOrdersLink = By.cssSelector("(.myaccount-container__my-orders .myaccount-container__box-link");
-	private By viewAllOrdersLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[58]");
 	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[59]");
-	private By viewAllWishListLinkFR = By.xpath("(//a[contains(text(),'Tout afficher')])[59]");
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
 	private By myEmailPrefText = By.xpath("//*[contains(text(),'Email preferences']");
@@ -75,7 +72,6 @@ public class MyAccountPage extends BasePage {
 	private By addressesLinkDE = By.xpath("//a[text()='Adressen']");
 	private By addressesTextDE = By.xpath("//*[contains(text(), 'Adressen']");
 	private By myAccountLinkDE = By.xpath("//a[text()='Mein Konto']");
-	private By addDeleteCardLink = By.xpath("//a[text()='Add/Delete']");
 	private By addDeleteCardLinkDE = By.xpath("//a[text()='Hinzufügen/Löschen']");
 	private By ordersTopNavLinkDE = By.xpath("//a[@title='Bestellungen']");
 	private By accountInfoTopNabLinkDE = By.xpath("//a[text()='Kontoinformationen']");
@@ -87,6 +83,7 @@ public class MyAccountPage extends BasePage {
 	private By logoutTopNavFR = By.xpath("//a[text()='Se deconnecter']");
 	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(),'Alle Anzeigen')]");
 	private By viewAllWishListLinkDE = By.xpath("(//a[contains(text(),'Alle ansehen')])[57]");
+	private By orderStatusLinkDE = By.xpath("//a[text()='Bestellstatus']");
 
 	public void logoutMiddle() {
 		logger.info("Logging out from the application:");
@@ -211,19 +208,20 @@ public class MyAccountPage extends BasePage {
 		return new MyOrdersPage(driver);
 	}
 
-	public MyOrdersPage returnMyOrdersPageViewAllMiddleNavFR() {
-		WebDriverUtils.scrollLittDown(driver, viewAllOrdersLinkFR);
-		WebDriverUtils.clickOnElementWithWait(driver, viewAllOrdersLinkFR);
+	public MyOrdersPage returnMyOrdersPageOrderStatusMiddleNav() {
+		WebDriverUtils.scrollLittDown(driver, orderStatusLink);
+		WebDriverUtils.clickOnElementWithWait(driver, orderStatusLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 		return new MyOrdersPage(driver);
 	}
-
-	public MyOrdersPage returnMyOrdersPageOrderStatusMiddleNav() {
-		WebDriverUtils.scrollLittDown(driver, orderStatusLink);
-		WebDriverUtils.clickOnElementWithWait(driver, orderStatusLink);
+	//Bestellstatus
+	
+	public MyOrdersPage returnMyOrdersPageOrderStatusMiddleNavDE() {
+		WebDriverUtils.scrollLittDown(driver, orderStatusLinkDE);
+		WebDriverUtils.clickOnElementWithWait(driver, orderStatusLinkDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
@@ -246,14 +244,7 @@ public class MyAccountPage extends BasePage {
 		return new MyWishListPage(driver);
 	}
 
-	public MyWishListPage returnMyWishListPageViewAllMiddleNavFR() {
-		WebDriverUtils.scrollMiddlePage(driver, viewAllWishListLinkFR);
-		WebDriverUtils.clickOnElementWithWait(driver, viewAllWishListLinkFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
-		return new MyWishListPage(driver);
-	}
-
+	
 //Links with pages from left navigation
 	public PersonalnformationPage returnEditProfilePageLeftNav() {
 		WebDriverUtils.clickOnElementWithWait(driver, personalInfoLink);
@@ -276,13 +267,6 @@ public class MyAccountPage extends BasePage {
 		return new AddressesPage(driver);
 	}
 
-	public PaymentInformationPage returnPaymentInformationPageLeftNav() {
-		WebDriverUtils.clickOnElementWithWait(driver, paymentInformationLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(paymentInformationText));
-		return new PaymentInformationPage(driver);
-	}
-	
 	public PaymentInformationPage returnPaymentInformationPageLeftNavDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, paymentInformationLinkDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
@@ -383,7 +367,8 @@ public class MyAccountPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 		return new MyOrdersPage(driver);
 	}
-
+	
+	
 	public PersonalnformationPage returnPersonalInformationPageTopNav() {
 		WebDriverUtils.moveToElement(driver, myAccountLink);
 		WebDriverUtils.clickOnElementWithWait(driver, accountInfoTopNabLink);
@@ -410,14 +395,6 @@ public class MyAccountPage extends BasePage {
 
 	// Links with pages from My account core
 
-	public PaymentInformationPage returnPaymentInformationPageAddDeleteCardMiddleNav() {
-		WebDriverUtils.clickOnElementWithWait(driver, addDeleteCardLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(paymentInformationText));
-		return new PaymentInformationPage(driver);
-	}
-	
-	
 	public PaymentInformationPage returnPaymentInformationPageAddDeleteCardMiddleNavDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, addDeleteCardLinkDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,

@@ -19,14 +19,12 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class MenClothingPage extends BasePage{
 	
-	private By menClothingOuterwearCategory = By.linkText("Outerwear");
 	private By menClothingOutwearCategoryDE = By.linkText("Oberbekleidung");
 	private By menClothingOuterwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By menClothingSweatTshirtAndWoodiesCategory = By.linkText("Sweatshirts & Hoodies");
-    private By menClothingSweatTshirtAndWoodiesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
+    private By menClothingSweatTshirtAndWoodiesText = By.xpath("//h1[contains(text(), 'Sweatshirts & Hoodies für Damen']");
 	private By menClothingTopsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
 	private By menClothingTopsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By menClothingBreechesCategory = By.linkText("Tops & T-Shirts");
 	private By menClothingBreechesCategoryDE = By.linkText("Oberteile & T-Shirts");
 	private By clothingOuterwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
 	private By clothingSweatTshirtAndWoodiesCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
@@ -39,13 +37,6 @@ public class MenClothingPage extends BasePage{
 	}
 	
 	//Top navigation
-	public MenClothingOuterwearPage returnMenClothingOuterwearCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, menClothingOuterwearCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menClothingOuterwearText));
-		return new MenClothingOuterwearPage(driver);
-	}
-	
 	public MenClothingOuterwearPage returnMenClothingOuterwearCategoryPageDE() {
 		WebDriverUtils.clickOnElementWithWait(driver, menClothingOutwearCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
@@ -65,12 +56,6 @@ public class MenClothingPage extends BasePage{
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menClothingTopsAndTshirtsText));
 		return new MenClothingTopsAndTshirtsPage(driver);
-	}
-	
-	public MenClothingBreechesPage returnMenClothingBreechesCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, menClothingBreechesCategory);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-		return new MenClothingBreechesPage(driver);
 	}
 	
 	public MenClothingBreechesPage returnMenClothingBreechesCategoryPageDE() {

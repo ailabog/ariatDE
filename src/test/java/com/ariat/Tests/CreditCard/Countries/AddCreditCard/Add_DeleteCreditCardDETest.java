@@ -74,8 +74,8 @@ public class Add_DeleteCreditCardDETest extends BaseTest{
 		addACreditCardPage.selectExpirationYearCard(YEAR);
 		addACreditCardPage.selectExpirationMonthCard(MONTH);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
-		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
+		paymentInfoPage.checkCreditCardDE(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
+		paymentInfoPage.deleteCreditCardYesDE(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
 		logger.info("Finishing add credit card & delete it United Germany test");
   } 
 	

@@ -49,7 +49,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String CITY = "London";
+	public static final String CITY = "Frankfurt";
 	public static final String COUNTRY = "Deutschland";
 	public static final String EMAILEXISTENT = "aila.bogasieru@ariat.com";
 	public static final String PASSWORDEXISTENT = "Parola12345!";
@@ -80,7 +80,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
-		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutPage = myBagPage.returnCheckoutPageDE();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
@@ -107,7 +107,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
-		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutPage = myBagPage.returnCheckoutPageDE();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();

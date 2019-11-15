@@ -1,7 +1,6 @@
 package com.ariat.Tests.Addresses.Countries.DeleteAddress;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -54,7 +53,32 @@ public class DeleteAddressDETest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority = 0)
+	
+	@Test(priority=0)
+	public void addAddressDETest() {
+		logger.info("Starting add address Germany test");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
+		signInPage = homePageDE.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "Deutsch");
+		signInPage.returningPassword(PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
+		addAddressPage.enterFName("A");
+		addAddressPage.enterLName("B");
+		addAddressPage.enterAddress1("Basarabia Blvd, No 62");
+		addAddressPage.enterCity(CITY);
+		addAddressPage.selectCountry("Deutschland");
+		addAddressPage.enterPostCode(POST_CODE);
+		addAddressPage.enterPhone(PHONE);
+		addAddressPage.enterAddressId(ADDRESS_ID);
+		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
+		addressesPage.checkAddressDE(ADDRESS_ID);
+		logger.info("Finishing add address Germany test");
+	}
+	@Test(priority = 1)
 	public void deleteAddressDETest() {
 		logger.info("Starting deleting address Germany test");
 		homePage = new HomePage(new ChromeDriver());
@@ -66,29 +90,12 @@ public class DeleteAddressDETest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNoDE("nnn");
-		addressesPage.deleteAddressCreatedYesDE("nn");
-		addressesPage.checkAddressDE("nnn");
+		addressesPage.deleteAddressCreatedNoDE(ADDRESS_ID);
+		addressesPage.deleteAddressCreatedYesDE(ADDRESS_ID);
+		addressesPage.checkAddressDE(ADDRESS_ID);
 		logger.info("Finishing deleting address Germany test");
 	}
 
-	@Test(priority = 1)
-	public void deleteAddressFromEditDETest() {
-		logger.info("Starting deleting address from Edit address Germany test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutsch");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addAddressPage = addressesPage.returnAddressesEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditDeletePageDE();
-		addressesPage.checkAddressDE("ccc");
-		logger.info("Finishing deleting address from Edit address Germany test");
-	}
 	
 	@AfterTest
 	public void clearBrowserSession() {

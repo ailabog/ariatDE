@@ -65,7 +65,7 @@ public class MyAccountLeftNavigationDETest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
@@ -86,7 +86,7 @@ public class MyAccountLeftNavigationDETest extends BaseTest {
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.returnAddressesPageLeftNav();
+		myAccountPage.returnAddressesPageLeftNavDE();
 		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing addresses Germany test...");
@@ -105,7 +105,7 @@ public class MyAccountLeftNavigationDETest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageLeftNavDE();
 		myAccountPage.myAccountClick();
-		myAccountPage.returnAddACreditCardMiddleNav();
+		myAccountPage.returnAddACreditCardMiddleNavDE();
 		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing payment info Germany test...");
@@ -118,7 +118,7 @@ public class MyAccountLeftNavigationDETest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		signInPage = homePageDE.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "Deutsch");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();

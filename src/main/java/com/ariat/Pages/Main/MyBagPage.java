@@ -34,11 +34,16 @@ public class MyBagPage extends BasePage {
 	private By checkoutBtnDE = By.xpath("//a[text()='Zur Kasse']");
 	private By continueShoppingBtn = By.xpath("//a[text()='Continue shopping']");
 	private By ariatLogo = By.className("global-nav-logo-svg");
+	private By removeLinkDE = By.linkText("Entfernen");
 
 	public MyBagPage(WebDriver driver) {
 		super(driver);
 	}
 
+	public void removeProductDE() {
+		WebDriverUtils.clickOnElementWithWait(driver, removeLinkDE);
+	}
+	
 	public void cancelFreeGift() {
 		if (WebDriverUtils.findElement(driver, bonusDialog) != null) {
 			WebDriverUtils.clickOnElementWithWait(driver, cancelFreeGift);
@@ -94,12 +99,6 @@ public class MyBagPage extends BasePage {
 	public void clickContinueShopping() {
 		logger.info("Continue shopping..");
 		WebDriverUtils.clickOnElementWithWait(driver, continueShoppingBtn);
-	}
-
-	public CheckoutPage returnCheckoutPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-		return new CheckoutPage(driver);
 	}
 
 	public CheckoutPage returnCheckoutPageDE() {

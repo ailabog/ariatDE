@@ -27,7 +27,7 @@ public class SearchDETest extends BaseTest {
 	private EUCountries euCountry;
 	private Environments environment;
 	private final String OPTION = "boots";
-	private final String MESSAGE = "Product results for: ";
+	private final String MESSAGE = "Produktergebnisse für: ";
 
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
 	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;

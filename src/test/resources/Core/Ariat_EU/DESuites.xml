@@ -23,7 +23,8 @@
                <class name="com.ariat.Tests.Categories.Countries.MenCategory.Sorting.MenCategoryPaginationSortingDETest" />
           
                <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavDETest" />
-            
+               
+                      
                <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavDETest" />
            
                <class name ="com.ariat.Tests.Base.KillChromeTests" /> 

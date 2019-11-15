@@ -61,26 +61,6 @@ public class PaymentInformationPage extends BasePage {
 		return new AddACreditCardPage(driver);
 	}
 
-	public void checkCreditCard(String cardowner, String cardType, String expireDate) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) cardTable.findElements(By.tagName("div"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
-			for (WebElement cell : cells) {
-				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
-					if (WebDriverUtils.findElement(driver, deleteCardLink) != null
-							&& WebDriverUtils.findElement(driver, makeDefaultCardLink) != null) {
-						logger.info(
-								"Credit card with:{}" + cardowner + cardType + expireDate + "was created with success");
-					} else {
-						logger.info("Credit card with{}" + cardowner + cardType + expireDate + "was not created");
-					}
-
-				} else {
-					logger.info("Credit card was not found in the list of cards");
-				}
-			}
-		}
-	}
 	
 	public void checkCreditCardDE(String cardowner, String cardType, String expireDate) {
 		ArrayList<WebElement> rows = (ArrayList<WebElement>) cardTable.findElements(By.tagName("div"));
@@ -103,30 +83,6 @@ public class PaymentInformationPage extends BasePage {
 		}
 	}
 
-
-	public void deleteCreditCardNo(String cardowner, String cardType, String expireDate) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) cardTable.findElements(By.tagName("div"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
-			for (WebElement cell : cells) {
-				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
-					if (WebDriverUtils.findElement(driver, deleteCardLink) != null) {
-						WebDriverUtils.clickOnElementWithWait(driver, deleteCardLink);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
-						WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDeleteCard);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
-						logger.info(
-								"Credit card with:{}" + cardowner + cardType + expireDate + "was cancelled from deletion");
-					} else {
-						logger.info("Credit card with{}" + cardowner + cardType + expireDate + "was not cancelled from deletion");
-					}
-
-				} else {
-					logger.info("Credit card was not found in the list of cards");
-				}
-			}
-		}
-	}
 	
 	public void deleteCreditCardNoDE(String cardowner, String cardType, String expireDate) {
 		ArrayList<WebElement> rows = (ArrayList<WebElement>) cardTable.findElements(By.tagName("div"));
@@ -152,30 +108,6 @@ public class PaymentInformationPage extends BasePage {
 		}
 	}
 	
-	public void deleteCreditCardYes(String cardowner, String cardType, String expireDate) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) cardTable.findElements(By.tagName("div"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
-			for (WebElement cell : cells) {
-				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
-					if (WebDriverUtils.findElement(driver, deleteCardLink) != null) {
-						WebDriverUtils.clickOnElementWithWait(driver, deleteCardLink);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
-						WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDeleteCard);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
-						logger.info(
-								"Credit card with:{}" + cardowner + cardType + expireDate + "was deleted with success");
-					} else {
-						logger.info("Credit card with{}" + cardowner + cardType + expireDate + "was not deleted");
-					}
-
-				} else {
-					logger.info("Credit card was not found in the list of cards");
-				}
-			}
-		}
-	}
-
 	public void deleteCreditCardYesDE(String cardowner, String cardType, String expireDate) {
 		ArrayList<WebElement> rows = (ArrayList<WebElement>) cardTable.findElements(By.tagName("div"));
 		for (WebElement row : rows) {
@@ -199,29 +131,7 @@ public class PaymentInformationPage extends BasePage {
 			}
 		}
 	}
-	
-	public void makeDefaultCreditCard(String cardowner, String cardType, String expireDate) {
-		ArrayList<WebElement> rows = (ArrayList<WebElement>) cardTable.findElements(By.tagName("div"));
-		for (WebElement row : rows) {
-			ArrayList<WebElement> cells = (ArrayList<WebElement>) row.findElements(By.tagName("div"));
-			for (WebElement cell : cells) {
-				if (cell.getText() == cardowner && cell.getText() == cardType && cell.getText() == expireDate) {
-					if (WebDriverUtils.findElement(driver, makeDefaultCardLink) != null) {
-						WebDriverUtils.clickOnElementWithWait(driver, makeDefaultCardLink);
-						WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_20_SECONDS);
-						logger.info(
-								"Credit card with:{}" + cardowner + cardType + expireDate + "was made default with success");
-					} else {
-						logger.info("Credit card with{}" + cardowner + cardType + expireDate + "was not made default");
-					}
 
-				} else {
-					logger.info("Credit card was not found in the list of cards");
-				}
-			}
-		}
-	}
-	
 	public void makeDefaultCreditCardDE(String cardowner, String cardType, String expireDate) {
 		ArrayList<WebElement> rows = (ArrayList<WebElement>) cardTable.findElements(By.tagName("div"));
 		for (WebElement row : rows) {
@@ -242,13 +152,6 @@ public class PaymentInformationPage extends BasePage {
 				}
 			}
 		}
-	}
-	
-	public void assertMakeDefaultCreditCard(String expectedCreditCard) {
-		String creditLabel = WebDriverUtils.getElementText(driver, creditNickname);
-		String substring = "DEFAULT | ";
-		String makeDefault = substring + creditLabel;
-		assertEquals(makeDefault , expectedCreditCard, "Credit card made as default is being displayed");
 	}
 	
 	public void assertMakeDefaultCreditCardDE(String expectedCreditCard) {

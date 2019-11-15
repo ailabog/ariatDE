@@ -21,7 +21,6 @@ import com.ariat.Pages.Main.BasePage;
 public class BagsProductPage extends BasePage {
 
 	private By addToBasket = By.cssSelector("#add-to-cart");
-	private By myBagText = By.xpath("*[contains[text(), 'My Bag']");
 	private By wishList = By.cssSelector(".add-to-wishlist");
 	private By bonusDialog = By.id("bonus-choose-container product-content");
 
@@ -31,8 +30,6 @@ public class BagsProductPage extends BasePage {
 	private By myWishlistText = By.xpath("//*contains[text()='Wishlist']");
 
 	private By increaseQty = By.xpath("//span[text()='+']");
-	// increase qty //css=.quantity-increase
-
 	private By decreaseQty = By.xpath("//span[text()='-']");
 	private By writeReview = By.xpath("//*[@id=\"BVRRSummaryContainer\"]/div/div/div/div/div/div/div");
 	private By reviewDialog = By.id("bv-mbox-lightbox-list");
@@ -143,12 +140,10 @@ public class BagsProductPage extends BasePage {
 
 	public void recommendProductYes() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductYes);
-	
 	}
 
 	public void recommendProductNo() {
 		WebDriverUtils.clickOnElementWithWait(driver, recommendProductNo);
-	
 	}
 
 	public void userInfoReview(String nickname, String userLocationReview, String email) {

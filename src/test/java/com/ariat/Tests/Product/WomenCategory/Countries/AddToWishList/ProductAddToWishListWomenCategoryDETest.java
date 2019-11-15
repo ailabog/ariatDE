@@ -50,7 +50,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 	
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
-	public static final String BIRTH_MONTH = "March";
+	public static final String BIRTH_MONTH = "März";
 	public static final String BIRTH_DAY = "02";
 
 	public static final String EMAIL = GenerateRandomDataUtils.generateEmail(12);

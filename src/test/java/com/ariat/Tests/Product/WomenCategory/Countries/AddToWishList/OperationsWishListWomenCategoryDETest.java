@@ -72,7 +72,7 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
-		myWishListPage.sendListToAFriend("Ana", "aila.bogasieru@yahoo.com");
+		myWishListPage.sendListToAFriendDE("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
 	}
 

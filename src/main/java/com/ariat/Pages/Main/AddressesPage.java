@@ -34,8 +34,7 @@ public class AddressesPage extends BasePage {
 	private By deleteButtonDialog = By.xpath("//span[text()='Delete']");
 	private By AddAddressButton = By.xpath("//*[@id=\"addresses\"]/div[29]/a");
 	private By addressNickname = By.xpath("//*[@id=\"addresses\"]/div[3]/div[1]/div[1]/h3/span");
-	private By loadMoreButton = By.xpath("//button[@title='Load More']");
-    private By loadMoreButtonDE = By.xpath("//button[@title='Weitere laden']");
+	private By loadMoreButtonDE = By.xpath("//button[@title='Weitere laden']");
 	
 	private boolean checkAddress;
 
@@ -121,21 +120,6 @@ public class AddressesPage extends BasePage {
 
 	}
 
-	public void deleteAddressCreatedYes(String addressValue) {
-		if (WebDriverUtils.findElement(driver, deleteLink) != null) {
-
-			WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-			WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialog);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-			logger.info("Delete {}" + addressValue + "was done with success");
-
-		} else {
-
-			logger.info("Delete {}" + addressValue + "was not possible");
-		}
-
-	  }
 
 	public void deleteAddressCreatedYesDE(String addressValue) {
 		if (WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
@@ -151,19 +135,6 @@ public class AddressesPage extends BasePage {
 		}
 	}
 
-	public void editAddressCreated(String addressValue) {
-
-		if (WebDriverUtils.findElement(driver, editLink) != null) {
-			WebDriverUtils.clickOnElementWithWait(driver, editLink);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-			logger.info("Edit address {}" + addressValue + "was done with success");
-
-		} else {
-
-			logger.info("Edit address {}" + addressValue + "was not possible");
-		}
-	}
-
 	public void editAddressCreatedDE(String addressValue) {
 		if (WebDriverUtils.findElement(driver, editLink) != null) {
 			WebDriverUtils.clickOnElementWithWait(driver, editLink);
@@ -176,17 +147,6 @@ public class AddressesPage extends BasePage {
 		}
 	}
 
-	public void makeDefaultAddressCreated(String addressValue) {
-		if (WebDriverUtils.findElement(driver, makeDefaultLink) != null) {
-			WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLink);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-			logger.info("Make default address {}" + addressValue + "was done with success");
-
-		} else {
-
-			logger.info("Make default {}" + addressValue + "was not possible");
-		}
-	}
 
 	public void makeDefaultAddressCreatedDE(String addressValue) {
 		if (WebDriverUtils.findElement(driver, makeDefaultLinkDE) != null) {
@@ -207,26 +167,7 @@ public class AddressesPage extends BasePage {
 		assertEquals(makeDefault, expectedAddress, "Address made as default is being displayed");
 	}
 
-	public void assertMakeDefault(String expectedAddress) {
-		String addressLabel = WebDriverUtils.getElementText(driver, addressNickname);
-		String substring = "DEFAULT | ";
-		String makeDefault = substring + addressLabel;
-		assertEquals(makeDefault, expectedAddress, "Address made as default is being displayed");
-	}
-
-	public void loadMoreAddesses() {
-		do {
-			logger.info("Loading more addresses...");
-			WebDriverUtils.scrollMiddlePage(driver, loadMoreButton);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
-		while (!WebDriverUtils.isElementDisplayed(driver, addressesText)) {
-			WebDriverUtils.scrollUp(driver, addressesText);
-		}
-	}
-
+	
 	public void loadMoreAddessesDE() {
 		do {
 			logger.info("Loading more addresses...");

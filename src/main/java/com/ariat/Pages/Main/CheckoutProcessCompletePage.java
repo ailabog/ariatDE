@@ -22,9 +22,7 @@ public class CheckoutProcessCompletePage extends BasePage{
 	
 	private By subscribeToNewsletterCheck = By.xpath("//input[@value='Subscribe to our Newsletter']");
 	private By submitBtn = By.xpath("//button[@class='el-button btn btn-primary submit-newsletter-btn el-button--primary']");
-	private By createPassword = By.xpath("//input[@placeholder='Create a password']");
 	private By createPasswordDE = By.xpath("//input[@placeholder='Passwort erstellen']");
-	private By confirmPassword = By.xpath("//input[@placeholder='Confirm password']");
 	private By confirmPasswordDE = By.xpath("//input[@placeholder='Passwort bestatigend']");
 	private By createAccountBtn = By.xpath("/span[text()='Create an account']");
 	private By createAccountBtnDE = By.xpath("//span[contains(text(), 'Konto erstellen')]");
@@ -57,20 +55,11 @@ public class CheckoutProcessCompletePage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, submitBtn);
 	}
 	
-	public void enterPassword(String createPasswordValue) {
-		logger.info("Entering password..");
-		WebDriverUtils.enterTextBox(driver, createPassword, createPasswordValue);
-	}
-	
 	public void enterPasswordDE(String createPasswordValue) {
 		logger.info("Entering password..");
 		WebDriverUtils.enterTextBox(driver, createPasswordDE, createPasswordValue);
 	}
 	
-	public void confirmPassword(String createPasswordValue) {
-		logger.info("Entering password..");
-		WebDriverUtils.enterTextBox(driver, confirmPassword, createPasswordValue);
-	}
 	
 	public void confirmPasswordDE(String createPasswordValue) {
 		logger.info("Entering password..");

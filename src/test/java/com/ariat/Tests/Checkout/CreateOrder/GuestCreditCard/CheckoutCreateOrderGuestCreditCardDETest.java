@@ -78,7 +78,7 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
-		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutPage = myBagPage.returnCheckoutPageDE();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.enterFName(FIRST_NAME);
 		checkoutProcessPage.enterLName(LAST_NAME);
@@ -114,7 +114,7 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
-		checkoutPage = myBagPage.returnCheckoutPage();
+		checkoutPage = myBagPage.returnCheckoutPageDE();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.enterFName(FIRST_NAME);
 		checkoutProcessPage.enterLName(LAST_NAME);
