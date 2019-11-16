@@ -34,7 +34,6 @@ public class HomePageDE extends BasePage implements List<HomePage> {
 	private By checkOrderText = By.xpath("//*text()='Check an order / request return']");
 	private By newcustomerText = By.xpath("//*text()='New Customer']");
 	private By signIn = By.xpath("//a[text()= 'Einloggen']");
-	
 	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
 	private By searchTextBox = By.xpath("//input[@placeholder='Produktsuche']");
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
@@ -73,7 +72,6 @@ public class HomePageDE extends BasePage implements List<HomePage> {
 	private By deliveryFooter = By.linkText("Delivery");
 	private By faqsFooter = By.linkText("FAQs");
 	private By sizeChartsFooter = By.linkText("Size Charts");
-
 	private By findARetailerFooter = By.linkText("Find a Retailer");
 	private By divinoStockListFooter = By.linkText("Divino Stockists");
 	private By contactUsFooter = By.linkText("Contact Us");
@@ -104,101 +102,104 @@ public class HomePageDE extends BasePage implements List<HomePage> {
 	
 	public void checkElementsHeader() {
 		if (WebDriverUtils.isElementDisplayed(driver, ariatLogo)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, ariatLogo);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		
 		} else {
 			logger.info("This element {}" + ariatLogo + "was not found");
 		}
 
 		if (WebDriverUtils.isElementDisplayed(driver, womenCategory)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + womenCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, menCategory)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, menCategory);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 		} else {
 			logger.info("This element {}" + menCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, kidsCategory)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, kidsCategory);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + kidsCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, clearanceCategory)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, clearanceCategory);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		
 		} else {
 			logger.info("This element {}" + clearanceCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, giftGuideMenu)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, giftGuideMenu);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + giftGuideMenu + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, ariatLifeCategory)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, ariatLifeCategory);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + ariatLifeCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, exploreCategory)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, exploreCategory);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + exploreCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, basket)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, basket);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + basket + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, signIn)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, signIn);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + signIn + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, bannerDeliveryText)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, bannerDeliveryText);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + bannerDeliveryText + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, findARetailerHeader)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, findARetailerHeader);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + findARetailerHeader + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, aboutUsHeader)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, aboutUsHeader);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + aboutUsHeader + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, chooseLocationArrow)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			if (WebDriverUtils.isElementDisplayed(driver, countrySelectorWindow)) {
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-			} else {
+		} else {
 				logger.info("Country selector window did not show up");
 			}
 		} else {
 			logger.info("This element {}" + chooseLocationArrow + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, searchIcon)) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, searchIcon);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, closeSearchIcon);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} else {
 			logger.info("This element {}" + searchIcon + "was not found");
 		}

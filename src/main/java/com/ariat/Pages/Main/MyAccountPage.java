@@ -51,7 +51,7 @@ public class MyAccountPage extends BasePage {
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	private By addCardLink = By.xpath("//a[text()='Add Card']");
 	private By addCardLinkDE = By.xpath("//a[text()='Karte hinzufügen']");
-	private By viewAllOrdersLink = By.cssSelector("(.myaccount-container__my-orders .myaccount-container__box-link");
+	private By viewAllOrdersLink = By.cssSelector(".myaccount-container__my-orders .myaccount-container__box-link");
 	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[59]");
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
@@ -200,6 +200,7 @@ public class MyAccountPage extends BasePage {
 
 	public MyOrdersPage returnMyOrdersPageViewAllMiddleNav() {
 		WebDriverUtils.scrollLittDown(driver, viewAllOrdersLink);
+        WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, viewAllOrdersLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));

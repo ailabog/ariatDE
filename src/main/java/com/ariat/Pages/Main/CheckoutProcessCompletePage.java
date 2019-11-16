@@ -46,33 +46,33 @@ public class CheckoutProcessCompletePage extends BasePage{
 	
 	public void placeOrder() {
 		WebDriverUtils.scroll350Down(driver, buyNowBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
 	public void submitingSubscription() {
 		logger.info("Submiting subscription to newsletter..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, submitBtn);
 	}
 	
 	public void enterPasswordDE(String createPasswordValue) {
 		logger.info("Entering password..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, createPasswordDE, createPasswordValue);
 	}
 	
 	
 	public void confirmPasswordDE(String createPasswordValue) {
 		logger.info("Entering password..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, confirmPasswordDE, createPasswordValue);
 	}
 	
-	public void createAccount() {
-		logger.info("Create account..");
-		WebDriverUtils.clickOnElementWithWait(driver, createAccountBtn);
-	}
-	
+
 	public void createAccountDE() {
 		logger.info("Create account..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountBtnDE);
 	}
 	

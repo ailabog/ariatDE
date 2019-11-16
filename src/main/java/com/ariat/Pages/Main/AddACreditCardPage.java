@@ -92,6 +92,7 @@ public class AddACreditCardPage extends BasePage {
 	
      public PaymentInformationPage returnPaymentInformationPage() {
     	 WebDriverUtils.scroll350Down(driver, applyButton);
+    		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, applyButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(creditCardInfoText));

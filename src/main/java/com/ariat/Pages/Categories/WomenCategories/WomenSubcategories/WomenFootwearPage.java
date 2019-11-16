@@ -48,6 +48,7 @@ public class WomenFootwearPage extends BasePage{
 	}
 	
 	public WomenFootwearRidingPage returnWomenFootwearRidingCategoryPageDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearRidingCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearRidingText));
@@ -56,6 +57,7 @@ public class WomenFootwearPage extends BasePage{
 	
 	
 	public WomenFootwearCountryPage returnWomenFootwearCountryCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCountryCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCountryText));
@@ -64,6 +66,7 @@ public class WomenFootwearPage extends BasePage{
 	
 	
 	public WomenFootwearWesternPage returnWomenFootwearWesternCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearWesternCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFootwearWesternText));
@@ -71,6 +74,7 @@ public class WomenFootwearPage extends BasePage{
 	}
 	
 	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCasualShoesCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(casualShoesText));
@@ -79,6 +83,7 @@ public class WomenFootwearPage extends BasePage{
 	
 	
 	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesCategoryPageDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCasualShoesCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(casualShoesText));
@@ -86,6 +91,7 @@ public class WomenFootwearPage extends BasePage{
 	}
 
 	public WomenRidingPage returnWomennRidingCategoryPageLeftNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, footwearRidingCategoryLeftNav);
 			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,
 					ExpectedConditions.invisibilityOfElementLocated(menFootwearRidingText));

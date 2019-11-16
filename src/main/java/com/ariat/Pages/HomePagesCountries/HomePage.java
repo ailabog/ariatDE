@@ -32,7 +32,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
 	private By countrySelectorWindow = By.xpath("//span[@class='icon icon-full-arrow-down ms_desktop-only']");
-	
+
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
@@ -71,19 +71,19 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 			}
 			return new HomePageUK(driver);
-			
-			
+
 		case "(Deutschland)":
 			logger.info("I choose Deutsch Deutschland as location");
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
 				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.DE.getLocator());
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 				logger.info("Saving location...");
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
-				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			}
 			return new HomePageDE(driver);
 

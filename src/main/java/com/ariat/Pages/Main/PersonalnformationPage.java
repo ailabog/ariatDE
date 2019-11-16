@@ -88,6 +88,7 @@ public class PersonalnformationPage extends BasePage {
 	public void saveEdits() {
 		logger.info("Saving the updates for personal informations ");
 		WebDriverUtils.scroll150(driver, saveEditsButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, saveEditsButton);
 	
 	}

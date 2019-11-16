@@ -61,10 +61,12 @@ public class BreechProductPage extends BasePage{
 	}
 	
 	public void selectAttributeSize(String size) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.selectVisibleText(driver, selectSize, size);
 	}
 
 	public void selectAttributeCalf(String calf) {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.selectVisibleText(driver, selectCalf, calf);
 	}
 
@@ -74,6 +76,7 @@ public class BreechProductPage extends BasePage{
 
 	public void setQtyIncrease(int n) {
 		for (int i = 0; i <= n; i++) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, increaseQty);
 		
 		}
@@ -81,6 +84,7 @@ public class BreechProductPage extends BasePage{
 
 	public void setQtyDecrease(int n) {
 		for (int i = 0; i <= n; i++) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, decreaseQty);
 		
 		}

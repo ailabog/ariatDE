@@ -105,28 +105,21 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	private By wishListText = By.xpath("//h1[text()='My account']");
 	private By wishListText1 = By.xpath("//h2[text()='Wishlist']");
 	private By partnersFeiFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[1]/a/span");
-
 	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
 	private By searchTextBox = By.xpath("//input[@placeholder='Search for Products']");
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
-
 	private By womenFootwearCasualShoesCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[5]/a]");
 	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-
 	private By accessoriesCategory = By.xpath("//a[contains(text(),'Accessories']");
-
 	private By minicartDialog = By.id("mini-cart-products-ariat");
 	private boolean showMinicart;
-
 	private By topsAndTshirtsCategory = By.xpath("//a[text()='Tops & T-Shirts']");
 	private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By emailText = By.xpath("//input[@placeholder='Email address']");
-
 	private By myAccountFooter = By.xpath("//a[contains(text(),'My Accounts')]");
 	private By myAccountText = By.xpath("//h2[text()='Returning customer']");
-
 	private By aboutUsHeader = By.linkText("About Us");
 	private By ridingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[1]/a");
 
@@ -145,68 +138,68 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 			logger.info("This element {}" + womenCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, menCategory)) {
-			WebDriverUtils.clickOnElementWithWait(driver, menCategory);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, menCategory);
 		} else {
 			logger.info("This element {}" + menCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, kidsCategory)) {
-			WebDriverUtils.clickOnElementWithWait(driver, kidsCategory);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, kidsCategory);
 		} else {
 			logger.info("This element {}" + kidsCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, clearanceCategory)) {
-			WebDriverUtils.clickOnElementWithWait(driver, clearanceCategory);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, clearanceCategory);
 		} else {
 			logger.info("This element {}" + clearanceCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, giftGuideMenu)) {
-			WebDriverUtils.clickOnElementWithWait(driver, giftGuideMenu);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, giftGuideMenu);
 		} else {
 			logger.info("This element {}" + giftGuideMenu + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, ariatLifeCategory)) {
-			WebDriverUtils.clickOnElementWithWait(driver, ariatLifeCategory);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, ariatLifeCategory);
 		} else {
 			logger.info("This element {}" + ariatLifeCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, exploreCategory)) {
-			WebDriverUtils.clickOnElementWithWait(driver, exploreCategory);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, exploreCategory);
 		} else {
 			logger.info("This element {}" + exploreCategory + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, basket)) {
-			WebDriverUtils.clickOnElementWithWait(driver, basket);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, basket);
 		} else {
 			logger.info("This element {}" + basket + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, signIn)) {
-			WebDriverUtils.clickOnElementWithWait(driver, signIn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, signIn);
 		} else {
 			logger.info("This element {}" + signIn + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, bannerDeliveryText)) {
-			WebDriverUtils.clickOnElementWithWait(driver, bannerDeliveryText);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, bannerDeliveryText);
 		} else {
 			logger.info("This element {}" + bannerDeliveryText + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, findARetailerHeader)) {
-			WebDriverUtils.clickOnElementWithWait(driver, findARetailerHeader);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, findARetailerHeader);
 		} else {
 			logger.info("This element {}" + findARetailerHeader + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, aboutUsHeader)) {
-			WebDriverUtils.clickOnElementWithWait(driver, aboutUsHeader);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, aboutUsHeader);
 		} else {
 			logger.info("This element {}" + aboutUsHeader + "was not found");
 		}
@@ -317,75 +310,75 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 			logger.info("This element {}" + emailSignUpFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, internationalFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, internationalFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, internationalFooter);
 		} else {
 			logger.info("This element {}" + internationalFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, pressRoomFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, pressRoomFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, pressRoomFooter);
 		} else {
 			logger.info("This element {}" + pressRoomFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, aboutUsFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, aboutUsFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, aboutUsFooter);
 		} else {
 			logger.info("This element {}" + aboutUsFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, careersFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, careersFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, careersFooter);
 		} else {
 			logger.info("This element {}" + careersFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, cookiePolicyFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, cookiePolicyFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, cookiePolicyFooter);
 		} else {
 			logger.info("This element {}" + cookiePolicyFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, privacyFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, privacyFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, privacyFooter);
 		} else {
 			logger.info("This element {}" + privacyFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, termsAndConditionsFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, termsAndConditionsFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, termsAndConditionsFooter);
 		} else {
 			logger.info("This element {}" + termsAndConditionsFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, modernSlaveryActFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, modernSlaveryActFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, modernSlaveryActFooter);
 		} else {
 			logger.info("This element {}" + modernSlaveryActFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, athletesFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, athletesFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, athletesFooter);
 		} else {
 			logger.info("This element {}" + athletesFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, myAccountsFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, myAccountsFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, myAccountsFooter);
 		} else {
 			logger.info("This element {}" + myAccountsFooter + "was not found");
 		}
 
 		if (WebDriverUtils.isElementDisplayed(driver, wishListFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, wishListFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, wishListFooter);
 		} else {
 			logger.info("This element {}" + wishListFooter + "was not found");
 		}
 		if (WebDriverUtils.isElementDisplayed(driver, partnersFeiFooter)) {
-			WebDriverUtils.clickOnElementWithWait(driver, partnersFeiFooter);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, partnersFeiFooter);
 		} else {
 			logger.info("This element {}" + partnersFeiFooter + "was not found");
 		}
@@ -393,9 +386,10 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 
 	public void search(String option) {
 		logger.info("Searching for a product...");
-		WebDriverUtils.clickOnElementWithWait(driver, search);
-		WebDriverUtils.enterTextBox(driver, searchTextBox, option);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, search);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, searchTextBox, option);
 	}
 
 	public void assertProductDisplayed(String expectedText) {
@@ -405,14 +399,14 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 
 	public void seeAllproducts() {
 		logger.info("Display all the products...");
-		WebDriverUtils.clickOnElementWithWait(driver, seeAllproductsLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, seeAllproductsLink);
 	}
 
 	public void closeSearch() {
 		logger.info("Close serach products...");
-		WebDriverUtils.clickOnElementWithWait(driver, closeSearch);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, closeSearch);
 	}
 	
 	public SignInPage returnSignInPage() {
@@ -427,6 +421,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	}
 
 	public WomenCategoryPage returnWomenCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenText));
@@ -435,6 +430,7 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 	
 	public WomenCategoryPage returnWomenCategoryPageRiding() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, ridingCategory);
 		return new WomenCategoryPage(driver);
 	}

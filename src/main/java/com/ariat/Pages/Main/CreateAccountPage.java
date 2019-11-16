@@ -231,6 +231,7 @@ public class CreateAccountPage extends BasePage {
 	}
 	
 	public void createAccountClickWithoutScroll() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
 		logger.info("New account was created with success");
 	

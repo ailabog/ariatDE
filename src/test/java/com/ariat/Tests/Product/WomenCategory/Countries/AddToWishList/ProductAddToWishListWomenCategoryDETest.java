@@ -104,7 +104,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
-		myAccountWishListPage.returningCustomer(EMAIL, "EnglishUK");
+		myAccountWishListPage.returningCustomer(EMAIL, "Deutsch");
 		myAccountWishListPage.returningPassword(PASSWORD);
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList not being logged test.");

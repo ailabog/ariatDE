@@ -37,30 +37,22 @@ public class MyAccountPage extends BasePage {
 	private By signIn = By.xpath("//a[text()= 'Sign In']");
 	private By personalInfoLink = By.xpath("//a[text()= 'Personal Information']");
 	private By personalInfoText = By.xpath("//*[contains(text(),'Personal Information']");
-
 	private By emailPreferencesText = By.xpath("//*[contains(text(), Email Preferences']");
 	private By emailPreferencesLink = By.xpath("//a[text()='Email Preferences']");
-
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
-
 	private By paymentInformationLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[5]/a");
 	private By paymentInformationText = By.className("//*contains[text(),'Credit card information']");
-
 	private By myOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[6]/a");
 	private By noOrdersText = By.className("//*contains[text(), We have no order records for this account.']");
 	private By yesOrdersText = By.xpath("//*contains[text(),'My orders']");
-
 	private By orderStatusLink = By.xpath("(//a[contains(text(),'Order Status')])[2]");
 	private By orderDetailsMyOrderLink = By.xpath("//*[@id=\"order-items\"]/div[1]/div[3]/a");
 	private By orderDetailsMyAccountLink = By.xpath("//div[@id='main']/div/div[2]/div/div/div/div[2]/div[5]/div[2]/div/div[4]/a[2]");
   	private By orderDetailsText = By.xpath("//*contains[text(),'Order details']");
-
 	private By myWishListLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
-
 	private By myAccountLink = By.xpath("//a[text()='My account']");
-
 	private By editPersonalInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[1]/a");
 	private By changePasswordLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[3]/a");
 	private By editEmailPreferenceLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[2]/div[1]/a");
@@ -70,12 +62,9 @@ public class MyAccountPage extends BasePage {
 	private By addCardLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[2]/div[2]/a");
 	private By viewAllOrdersLink = By.xpath("(//a[contains(text(),'View all')])[50]");
 	private By viewAllWishListLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
-
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
-
 	private By myEmailPrefText = By.xpath("//*[contains(text(),'Email preferences']");
-
 	private By ordersTopNavLink = By.xpath("//a[text()='Orders']");
 	private By accountInfoTopNabLink = By.xpath("//a[text()='Account Info']");
 	private By wishListTopNavLink = By.xpath("//a[text()='Wishlist']");
@@ -87,156 +76,177 @@ public class MyAccountPage extends BasePage {
 
 	public void logout() {
 		logger.info("Logging out from the application:");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, logout);
 	}
 
 	public void myAccountClick() {
 		logger.info("Going to My Account page...");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, myAccountLink);
 	}
 
 	// Links with pages from My account core
 
 	public PersonalnformationPage returnPersonalInfoPageMiddleNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editPersonalInfoLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(personalInfoText));
 		return new PersonalnformationPage(driver);
 	}
 
 	public PersonalnformationPage returnPersonalInfoPageChangePassMiddleNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, changePasswordLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(personalInfoText));
 		return new PersonalnformationPage(driver);
 	}
 
 	public EmailPreferencePage returnEmailPreferencePageMiddleNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editEmailPreferenceLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myEmailPrefText));
 		return new EmailPreferencePage(driver);
 	}
 
 	public AddressesPage returnAddressesPageMiddleNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editAddressesLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
 		return new AddressesPage(driver);
 	}
 
 	public AddAddressesPage returnAddAddressesPageMiddleNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addAddressLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesTextfromAddAddresses));
 		return new AddAddressesPage(driver);
 	}
 
 	public PaymentInformationPage returnPaymentInformationPageMiddleNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editPaymentInfoLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(paymentInformationText));
 		return new PaymentInformationPage(driver);
 	}
 
 	public AddACreditCardPage returnAddACreditCardMiddleNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addCardLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addCreditCardText));
 		return new AddACreditCardPage(driver);
 	}
 
 	public MyOrdersPage returnMyOrdersPageViewAllMiddleNav() {
 		WebDriverUtils.scrollElementToPosition(driver, viewAllOrdersLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, viewAllOrdersLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 		return new MyOrdersPage(driver);
 	}
 
 	public MyOrdersPage returnMyOrdersPageOrderStatusMiddleNav() {
 		WebDriverUtils.scrollElementToPosition(driver, orderStatusLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, orderStatusLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 		return new MyOrdersPage(driver);
 	}
 
 	public OrderDetailsPage returnOrderDetailsMyOrdersPageMiddleNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, orderDetailsMyOrderLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
 	}
 
 	public OrderDetailsPage returnOrderDetailsMyAccountPageMiddleNav() {
 		WebDriverUtils.scrollElementToPosition(driver, orderDetailsMyAccountLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, orderDetailsMyAccountLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(orderDetailsText));
 		return new OrderDetailsPage(driver);
 	}
 
 	public MyWishListPage returnMyWishListPageViewAllMiddleNav() {
 		WebDriverUtils.scrolltoElement(driver, viewAllWishListLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, viewAllWishListLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
 		return new MyWishListPage(driver);
 	}
 
 //Links with pages from left navigation
 	public PersonalnformationPage returnEditProfilePageLeftNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, personalInfoLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(personalInfoText));
 		return new PersonalnformationPage(driver);
 	}
 
 	public EmailPreferencePage returnEmailPreferencePageLeftNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, emailPreferencesLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(emailPreferencesText));
 		return new EmailPreferencePage(driver);
 	}
 
 	public AddressesPage returnAddressesPageLeftNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addressesLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
 		return new AddressesPage(driver);
 	}
 
 	public PaymentInformationPage returnPaymentInformationPageLeftNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, paymentInformationLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(paymentInformationText));
 		return new PaymentInformationPage(driver);
 	}
 
 	public MyOrdersPage returnMyOrdersPageLeftNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, myOrdersLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 		return new MyOrdersPage(driver);
 	}
 
 	public MyWishListPage returnMyWishListPageLeftNav() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, myWishListLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
 		return new MyWishListPage(driver);
 	}
 
 	public LogoutPage returnLogoutPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, logout);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(signIn));
 		return new LogoutPage(driver);
 	}
@@ -245,33 +255,37 @@ public class MyAccountPage extends BasePage {
 
 	public MyOrdersPage returnMyOrdersPageTopNav() {
 		WebDriverUtils.moveToElement(driver, myAccountLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, ordersTopNavLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(noOrdersText));
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(yesOrdersText));
 		return new MyOrdersPage(driver);
 	}
 
 	public PersonalnformationPage returnPersonalInformationPageTopNav() {
 		WebDriverUtils.moveToElement(driver, myAccountLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, accountInfoTopNabLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(personalInfoText));
 		return new PersonalnformationPage(driver);
 	}
 
 	public MyWishListPage returnWishListPageTopNav() {
 		WebDriverUtils.moveToElement(driver, myAccountLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, wishListTopNavLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
 		return new MyWishListPage(driver);
 	}
 
 	public LogoutPage returnLogoutFromMyAccountPageTopNav() {
 		WebDriverUtils.moveToElement(driver, myAccountLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(logoutTopNav));
 		return new LogoutPage(driver);
 	}

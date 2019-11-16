@@ -27,7 +27,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenClothingPage extends BasePage{
 	
-	private By womenClothingOuterwearCategory = By.linkText("Outerwear");
+	private By womenClothingOuterwearCategoryDE = By.linkText("Oberbekleidung");
 	private By womenClothingOuterwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By womenClothingSweatTshirtAndWoodiesCatagory = By.linkText("Sweatshirts & Hoodies");
     private By womenClothingSweatTshirtAndWoodiesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
@@ -47,13 +47,15 @@ public class WomenClothingPage extends BasePage{
 	
 	
 	public WomenClothingOuterwearPage returnWomenClothingOuterwearCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenClothingOuterwearCategory);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, womenClothingOuterwearCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingOuterwearText));
 		return new WomenClothingOuterwearPage(driver);
 	}
 	
 	public WomenClothingSweatTshirtAndWoodiesPage returnWomenClothingSweatTshirtAndWoodiesCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingSweatTshirtAndWoodiesCatagory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingSweatTshirtAndWoodiesText));
@@ -61,6 +63,7 @@ public class WomenClothingPage extends BasePage{
 	}
 	
 	public WomenClothingTopsAndTshirtsPage returnWomenClothingTopsAndTshirtsCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingTopsAndTshirtsCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingTopsAndTshirtsText));
@@ -68,6 +71,7 @@ public class WomenClothingPage extends BasePage{
 	}
 	
 	public WomenClothingShowPage returnWomenClothingShowCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingShowCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingShowText));
@@ -75,6 +79,7 @@ public class WomenClothingPage extends BasePage{
 	}
 	
 	public WomenClothingBreechesAndTightsPage returnWomenClothingBreechesAndTightsCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenClothingBreechesAndTightsCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenClothingBreechesAndTightsText));
@@ -83,6 +88,7 @@ public class WomenClothingPage extends BasePage{
 
 	
 	public BreechProductPage returnBreechProductPageDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, breechesAndTightsCategoryDE);
 		WebDriverUtils.clickOnElementWithWait(driver, breechProduct);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,

@@ -107,10 +107,10 @@ public class AddressesPage extends BasePage {
 
 	public void deleteAddressCreatedNoDE(String addressValue) {
 		if (WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, deleteLinkDE);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		    WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialogDE);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			logger.info("Cancel deleting {}" + addressValue + "was done with success");
 
 		} else {
@@ -123,10 +123,10 @@ public class AddressesPage extends BasePage {
 
 	public void deleteAddressCreatedYesDE(String addressValue) {
 		if (WebDriverUtils.findElement(driver, deleteLinkDE) != null) {
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, deleteLinkDE);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialogDE);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 			logger.info("Delete {}" + addressValue + "was done with success");
 
 		} else {
@@ -137,8 +137,8 @@ public class AddressesPage extends BasePage {
 
 	public void editAddressCreatedDE(String addressValue) {
 		if (WebDriverUtils.findElement(driver, editLink) != null) {
-			WebDriverUtils.clickOnElementWithWait(driver, editLink);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, editLink);
 			logger.info("Edit address {}" + addressValue + "was done with success");
 
 		} else {
@@ -150,8 +150,8 @@ public class AddressesPage extends BasePage {
 
 	public void makeDefaultAddressCreatedDE(String addressValue) {
 		if (WebDriverUtils.findElement(driver, makeDefaultLinkDE) != null) {
-			WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLinkDE);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, makeDefaultLinkDE);
 			logger.info("Make default address {}" + addressValue + "was done with success");
 
 		} else {
@@ -184,11 +184,12 @@ public class AddressesPage extends BasePage {
 	public void addAddress() {
 		logger.info("Adding new address...");
 		WebDriverUtils.scrolltoElement(driver, AddAddressButton);
-		WebDriverUtils.clickOnElementWithWait(driver, AddAddressButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, AddAddressButton);
 	}
 
 	public AddAddressesPage returnAddAddresses() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addressesLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
@@ -196,6 +197,7 @@ public class AddressesPage extends BasePage {
 	}
 
 	public AddAddressesPage returnAddressesEdit() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));

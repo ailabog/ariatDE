@@ -60,40 +60,43 @@ public class CheckoutProcessPage extends BasePage {
 
 	public void clickEditBag() {
 		logger.info("Editing bag..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, editBagLink);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void clickCheckoutBtn() {
 		WebDriverUtils.scrollLittDown(driver, checkoutBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void selectArrow() {
 		logger.info("Selecting country..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 
 	public void selectCountry(String optionCountry) {
 		switch (optionCountry) {
 		case "Belgium":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, selectOptionBE);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			break;
+		break;
+		
 		case "Deutschland":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, selectOptionDE);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			break;
+		break;
+		
 		case "France":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.scroll500Down(driver, selectOptionFR);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			break;
+		break;
 
 		case "UK":
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, selectOption);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		
 			break;
 		default:
 			throw new RuntimeException("Language" + optionCountry + "not supported");
@@ -102,138 +105,139 @@ public class CheckoutProcessPage extends BasePage {
 
 	public void enterFName(String nameValue) {
 		logger.info("Entering first name..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, firstName, nameValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void closeWindowAddress() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, closeWindowAddressBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterLName(String lastValue) {
 		logger.info("Entering last name..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, lastName, lastValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterAddress(String addressValue) {
 		logger.info("Entering address address..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, address, addressValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterAddress1(String addressValue1) {
 		logger.info("Entering address1 name..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, address1, addressValue1);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterCity(String cityValue) {
 		logger.info("Entering city name..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, city, cityValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterZipCode(String zipCodeValue) {
 		logger.info("Entering zip code..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, zipCode, zipCodeValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	
 	}
 
 	public void checkBillingCheckBox() {
 		logger.info("Checking billing address the same..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, checkCheckBoxBilling);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterMobile(String mobileValue) {
 		logger.info("Entering mobile phone..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, mobile, mobileValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void enterEmail(String emailValue) {
 		logger.info("Entering email..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, email, emailValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void checkAddToAddressBox() {
 		logger.info("Checking add to address box..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addToAddressBoxCheck);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void checkStayInTouch() {
 		logger.info("Checking stay in touch checkbox..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, stayInTouchCheck);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void continueCheckoutDE() {
 		logger.info("Continue checkout..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, continueCheckoutDE);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 
 	public void continueCheckout1() {
 		logger.info("Continue checkout..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, continueCheckout1);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void checkStandardDelivery() {
 		logger.info("Checking standard delivey..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, standardCheck);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void checkExpressDelivery() {
 		logger.info("Checking express delivery..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, expressCheck);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void expandPromoCode() {
 		logger.info("Expanding promo code..");
-		WebDriverUtils.clickOnElementWithWait(driver, expandPromoCode);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, expandPromoCode);
 	}
 
 	public void expandGiftCard() {
 		logger.info("Expanding gift card..");
-		WebDriverUtils.clickOnElementWithWait(driver, expandGiftCard);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, expandGiftCard);
 	}
 
 	public void apply() {
 		logger.info("Apply..");
-		WebDriverUtils.clickOnElementWithWait(driver, applyGifCard);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, applyGifCard);
 	}
 
 	public void enterPin(String pinValue) {
 		logger.info("Entering pin..");
-		WebDriverUtils.enterTextBox(driver, pinTxtBox, pinValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, pinTxtBox, pinValue);
 	}
 
 	public void enterGiftCard(String giftCardValue) {
 		logger.info("Entering gift card..");
-		WebDriverUtils.enterTextBox(driver, giftCardTxtBox, giftCardValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, giftCardTxtBox, giftCardValue);
 	}
 
 	public void clickSignIn() {
-		WebDriverUtils.clickOnElementWithWait(driver, signInLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, signInLink);
 	}
 
 	public void enterPromoCode(String promoCodeValue) {
 		logger.info("Entering promo code..");
-		WebDriverUtils.enterTextBox(driver, promoCodeTxtBox, promoCodeValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, promoCodeTxtBox, promoCodeValue);
 	}
 
 	public PaymentMethodsCheckoutPage returnPaymentMethodsCheckoutPage() {

@@ -51,7 +51,7 @@ public class GlovesProductPage extends BasePage{
 	private By userLocation = By.id("bv-text-field-userlocation");
 	private By emailReview = By.id("bv-email-field-hostedauthentication_authenticationemail");
 	private By postReviewButton = By.xpath("//button[text()='Post Review']");
-    private By updateButton = By.xpath("//button[@value='Update']");
+    private By updateButtonDE = By.name("dwfrm_wishlist_items_i0_updateItem");
 	private By lengthLocator = By.id("va-length");
 
 	By selectSize = By.id("va-size");
@@ -70,37 +70,32 @@ public class GlovesProductPage extends BasePage{
 
 
 	public void selectAttributeCalf(String calf) {
-		WebDriverUtils.selectVisibleText(driver, selectCalf, calf);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
+		WebDriverUtils.selectVisibleText(driver, selectCalf, calf);
 	}
 
 	public void selectAttributeHeight(String height) {
-		WebDriverUtils.selectVisibleText(driver, selectHeight, height);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
+		WebDriverUtils.selectVisibleText(driver, selectHeight, height);
 	}
 
 	public void setQtyIncrease(int n) {
 		for (int i = 0; i <= n; i++) {
-			WebDriverUtils.clickOnElementWithWait(driver, increaseQty);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		
+			WebDriverUtils.clickOnElementWithWait(driver, increaseQty);
 		}
 	}
 
 	public void setQtyDecrease(int n) {
 		for (int i = 0; i <= n; i++) {
-			WebDriverUtils.clickOnElementWithWait(driver, decreaseQty);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
-		}
+			WebDriverUtils.clickOnElementWithWait(driver, decreaseQty);
+	  }
 	}
 
 	public void writeReviewClick() {
-		WebDriverUtils.clickOnElementWithWait(driver, writeReview);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	
+		WebDriverUtils.clickOnElementWithWait(driver, writeReview);
 	}
 
 	public void writeReviewStar(String star) {
@@ -203,9 +198,9 @@ public class GlovesProductPage extends BasePage{
 	
 	}
 
-	public void update() {
+	public void updateDE() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
+		WebDriverUtils.clickOnElementWithWait(driver, updateButtonDE);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 
 	}

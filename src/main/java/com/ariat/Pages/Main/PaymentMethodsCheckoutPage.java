@@ -49,30 +49,30 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		case "Klarna":
 			logger.info("Choosing Klarna..");
 			WebDriverUtils.scroll500Down(driver, klarnaBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, klarnaBtn);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			break;
+		break;
 
 		case "Sofort":
 			logger.info("Choosing Sofort..");
 			WebDriverUtils.scroll350Down(driver, sofortBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, sofortBtn);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			break;
+		break;
 
 		case "Giropay":
 			logger.info("Choosing Giropay..");
 			WebDriverUtils.scroll350Down(driver, giropayBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, giropayBtn);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			break;
+		break;
 
 		case "CreditCard":
 			logger.info("Choosing  Credit Card..");
 			WebDriverUtils.scroll350Down(driver, creditCardBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, creditCardBtn);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			break;
+		break;
 
 		case "Ideal":
 			logger.info("Choosing  Ideal..");
@@ -84,9 +84,9 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		case "PayPal":
 			logger.info("Choosing PayPal..");
 			WebDriverUtils.scroll350Down(driver, payPalBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, payPalBtn);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-			break;
+		break;
 		default:
 			throw new RuntimeException("Language" + optionMethod + "not supported");
 		}
@@ -104,15 +104,15 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	public void enterCardNameNotlogged(String cardNameValue) {
 		logger.info("Entering card name..");
 		WebDriverUtils.scroll350Down(driver, nameText);
-		WebDriverUtils.enterTextBox(driver, nameText, cardNameValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, nameText, cardNameValue);
 	}
 
 	public void enterCardNo(String cardNumberValue) {
 		logger.info("Entering card number..");
 		WebDriverUtils.scroll350Down(driver, cardNo);
-		WebDriverUtils.enterTextBox(driver, cardNo, cardNumberValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, cardNo, cardNumberValue);
 	}
 
 	public void selectTypeCardMasterCard() {
@@ -180,20 +180,19 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 	public void expandGiftCard() {
 		logger.info("Expanding gift card..");
-		WebDriverUtils.clickOnElementWithWait(driver, expandGiftCard);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, expandGiftCard);
 	}
 
 	public void apply() {
 		logger.info("Apply..");
-		WebDriverUtils.clickOnElementWithWait(driver, applyGifCard);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, applyGifCard);
 	}
 
 	public void enterPin(String pinValue) {
 		logger.info("Entering pin..");
 		WebDriverUtils.enterTextBox(driver, pinTxtBox, pinValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void scroll1500DownSecurittCode() {
@@ -202,7 +201,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 	public void clickBuyNow() {
 		logger.info("Buying now..");
-		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
 	}
 }

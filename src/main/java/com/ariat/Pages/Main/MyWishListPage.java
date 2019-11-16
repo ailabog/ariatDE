@@ -20,7 +20,8 @@ public class MyWishListPage extends BasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(MyWishListPage.class);
 
-	private By sendToAFriendButtonDE = By.xpath("//a[@title='Meine Wunschliste teilen']");
+	//private By sendToAFriendButtonDE = By.xpath("//a[@title='Meine Wunschliste teilen']");
+	private By sendToAFriendButton = By.id("send-to-friend");
 	private By nameTxtBox = By.id("dwfrm_sendtofriend_friendsname");
 	private By emailFriendTextBox = By.id("dwfrm_sendtofriend_friendsemail");
 	private By shareEmailListButton = By.name("dwfrm_sendtofriend_send");
@@ -34,11 +35,11 @@ public class MyWishListPage extends BasePage {
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[5]/form/div[3]/div[1]/div/div/span[1]");
 	private By prioritySelect = By.id("dwfrm_wishlist_items_i0_priority");
 	private By updateItemWishList = By.name("dwfrm_wishlist_items_i0_updateItem");
-	private By removeItemWishList = By.xpath("//button[text()='Remove']");
 	private By editItemWishList = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[3]/div[2]/a[1]");
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
 	private By goBackToWishListEdit = By.cssSelector("span.ui-icon.ui-icon-closethick");
     private By noIteminWishListText = By.xpath("//*[contains[text(), 'You have no items on your wishlist.']");
+    private By removeLinkDE = By.linkText("Entfernen");
    	 
     private boolean noItemWishList;
     
@@ -48,7 +49,8 @@ public class MyWishListPage extends BasePage {
 
 	public void sendListToAFriendDE(String nameFrined, String email) {
 		logger.info("Sending my wish list to a friend");
-		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButtonDE);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, nameTxtBox, nameFrined);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -97,9 +99,8 @@ public class MyWishListPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
 	}
 
-	public void removeItemWishList() {
-		WebDriverUtils.clickOnElementWithWait(driver, removeItemWishList);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	public void removeProductDE() {
+		WebDriverUtils.clickOnElementWithWait(driver, removeLinkDE);
 	}
 
 	public void editItemWishList() {

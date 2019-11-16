@@ -20,15 +20,15 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenAccessoriesPage extends BasePage{
 	
-	private By womenAccessoriesHeadwearCategory = By.linkText("Headwear");
+	private By womenAccessoriesHeadwearCategoryDE = By.linkText("Mützen & Caps");
 	private By womenAccessoriesHeadwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenAccessoriesGlovesCategory = By.linkText("Gloves");
+	private By womenAccessoriesGlovesCategoryDE = By.linkText("Handschuhe");
 	private By womenAccessoriesGlovesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenAccessoriesBagsCategory = By.linkText("Bags");
+	private By womenAccessoriesBagsCategoryDE = By.linkText("Oberbekleidung");
 	private By womenAccessoriesBagsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenAccessoriesScarfAndPonchosCategory = By.linkText("Scarves & Ponchos");
+	private By womenAccessoriesScarfAndPonchosCategoryDE = By.linkText("Schals & Ponchos");
 	private By womenAccessoriesScarfAndPonchosText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenAccessoriesSocksCategory = By.linkText("Socks");
+	private By womenAccessoriesSocksCategoryDE = By.linkText("Socken");
 	private By womenAccessoriesSocksText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccessoriesGlovesLeftNavDE = By.linkText("Handschuhe");
     
@@ -37,44 +37,50 @@ public class WomenAccessoriesPage extends BasePage{
 	}
 	
 		
-	public WomenAccessoriesHeadwearPage returnWomenAccessoriesHeadwearCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesHeadwearCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+	public WomenAccessoriesHeadwearPage returnWomenAccessoriesHeadwearCategoryPageDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesHeadwearCategoryDE);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesHeadwearText));
 		return new WomenAccessoriesHeadwearPage(driver);
 	}
 	
-	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryPageDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesCategoryDE);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 		ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
 		return new WomenAccessoriesGlovesPage(driver);
 	}
 	
 	public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryleftNavPageDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesLeftNavDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
 		return new WomenAccessoriesGlovesPage(driver);
 	}
 	
-	public WomenAccessoriesBagsPage returnWomenAccessoriesBagsCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesBagsCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+	public WomenAccessoriesBagsPage returnWomenAccessoriesBagsCategoryPageDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesBagsCategoryDE);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesBagsText));
 		return new WomenAccessoriesBagsPage(driver);
 	}
 	
-	public WomenAccessoriesScarfAndPonchosPage returnWomenAccessoriesScarfAndPonchosCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesScarfAndPonchosCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+	public WomenAccessoriesScarfAndPonchosPage returnWomenAccessoriesScarfAndPonchosCategoryPageDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesScarfAndPonchosCategoryDE);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesScarfAndPonchosText));
 		return new WomenAccessoriesScarfAndPonchosPage(driver);
 	}
 	
-	public WomenAccessoriesSocksPage returnWomenAccessoriesSocksCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesSocksCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+	public WomenAccessoriesSocksPage returnWomenAccessoriesSocksCategoryPageDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesSocksCategoryDE);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesSocksText));
 		return new WomenAccessoriesSocksPage(driver);
 	}

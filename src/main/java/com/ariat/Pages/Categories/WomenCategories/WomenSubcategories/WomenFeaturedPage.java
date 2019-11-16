@@ -38,6 +38,7 @@ public class WomenFeaturedPage extends BasePage{
 	}
 	
 	public WomenFeaturedHeritageCollectionPage returnWomenFeaturedHeritageCollectionCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenFeaturedHeritageCollectionCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenFeaturedHeritageCollectionText));
@@ -45,6 +46,7 @@ public class WomenFeaturedPage extends BasePage{
 	}
 	
 	public WomenFeaturedWarmWeatherRidingPage returnWomenFeaturedWarmWeatherRidingCategoryPage() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenWarmWeatherRidingCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenWarmWeatherRidingCategoryText));
