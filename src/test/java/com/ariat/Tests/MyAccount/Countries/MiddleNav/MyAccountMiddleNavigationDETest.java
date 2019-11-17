@@ -133,7 +133,7 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 	}
 
 	@Test(priority = 5)
-	public void myAccountAccessWishListUKTest() {
+	public void myAccountAccessWishListDETest() {
 		logger.info("Starting wish list Germany test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

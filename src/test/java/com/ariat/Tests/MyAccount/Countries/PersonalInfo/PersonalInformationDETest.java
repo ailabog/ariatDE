@@ -46,7 +46,7 @@ public class PersonalInformationDETest extends BaseTest {
 	}
 
 	@Test
-	public void updatePersonalInformationTest() {
+	public void updatePersonalInformationTestDE() {
 		logger.info("Starting update personal information test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -66,7 +66,7 @@ public class PersonalInformationDETest extends BaseTest {
 		logger.info("Update personal information test ended...");
 	}
 	
-/*	@AfterTest
+	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
@@ -76,5 +76,5 @@ public class PersonalInformationDETest extends BaseTest {
 		personalInformationPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }*/
+    }
 }

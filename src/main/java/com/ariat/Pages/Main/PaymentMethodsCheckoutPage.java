@@ -162,14 +162,14 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 	public void enterSecurityCode(String securityCardValue) {
 		logger.info("Entering security card..");
-		WebDriverUtils.enterTextBox(driver, securityCode, securityCardValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, securityCode, securityCardValue);
 	}
 
 	public void reviewOrder() {
 		 WebDriverUtils.scroll350Down(driver, reviewOrderBtn);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void expandPromoCode() {
@@ -192,6 +192,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 	public void enterPin(String pinValue) {
 		logger.info("Entering pin..");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, pinTxtBox, pinValue);
 	}
 

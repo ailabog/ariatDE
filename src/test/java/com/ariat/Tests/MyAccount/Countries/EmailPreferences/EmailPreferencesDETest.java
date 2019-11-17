@@ -47,7 +47,7 @@ public class EmailPreferencesDETest extends BaseTest {
 	}
 
 	@Test
-	public void updatePersonalInformationTest() {
+	public void updatePersonalInformationTestDE() {
 		logger.info("Starting update personal information test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

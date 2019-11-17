@@ -81,8 +81,8 @@ public class MyAccountPage extends BasePage {
 			.xpath("//div[@id='main']/div/div[2]/div/div/div/div[2]/div[5]/div[2]/div/div[4]/a[2]");
 	private By womenText = By.xpath("//*contains(text(),'Women']");
 	private By logoutTopNavFR = By.xpath("//a[text()='Se deconnecter']");
-	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(),'Alle Anzeigen')]");
-	private By viewAllWishListLinkDE = By.xpath("(//a[contains(text(),'Alle ansehen')])[57]");
+	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(), 'Alle Anzeigen')]");
+	private By viewAllWishListLinkDE = By.xpath("//a[contains(text(), 'Alle ansehen')]");
 	private By orderStatusLinkDE = By.xpath("//a[text()='Bestellstatus']");
 
 	public void logoutMiddle() {
@@ -133,8 +133,8 @@ public class MyAccountPage extends BasePage {
 
 	public void myAccountClick() {
 		logger.info("Going to My Account page...");
-		WebDriverUtils.clickOnElementWithWait(driver, myAccountLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, myAccountLink);
 	}
 
 	// Links with pages from My account core
