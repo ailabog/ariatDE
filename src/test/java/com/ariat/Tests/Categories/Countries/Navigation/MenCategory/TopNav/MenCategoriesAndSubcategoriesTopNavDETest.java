@@ -90,7 +90,7 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		menCategoryPage = homePageDE.returnMenCategoryPage();
 		menCategoryPage.menCategoryDE();
-		menFootwearPage = menCategoryPage.returnMenFootwearPageDE();
+		menFootwearPage = menCategoryPage.returnMenFootwearPage();
 		menCategoryPage.menCategoryDE();
 		menFootwearRidingPage = menFootwearPage.returnMenFootwearRidingCategoryPage();
 		menCategoryPage.menCategoryDE();

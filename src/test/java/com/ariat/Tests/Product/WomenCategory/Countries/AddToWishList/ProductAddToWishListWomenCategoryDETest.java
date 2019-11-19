@@ -162,7 +162,6 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		homePageUK.quit();
 		homePageDE.quit();
 		signInPage.quit();
-		myAccountPage.quit();
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();

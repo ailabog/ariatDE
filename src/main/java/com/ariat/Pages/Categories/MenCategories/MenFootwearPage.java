@@ -20,7 +20,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class MenFootwearPage extends BasePage{
 	
-	private By menFootwearRidingCategory = By.linkText("Riding");
+	private By menFootwearRidingCategoryDE = By.linkText("Reiten");
 	private By menFootwearRidingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By menFootwearCountryCategory = By.linkText("Country");
 	private By menFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
@@ -44,7 +44,7 @@ public class MenFootwearPage extends BasePage{
 	//Top navigation
 	
 	public MenFootwearRidingPage returnMenFootwearRidingCategoryPage() {
-		WebDriverUtils.clickOnElementWithWait(driver, menFootwearRidingCategory);
+		WebDriverUtils.clickOnElementWithWait(driver, menFootwearRidingCategoryDE);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menFootwearRidingText));
 		return new MenFootwearRidingPage(driver);

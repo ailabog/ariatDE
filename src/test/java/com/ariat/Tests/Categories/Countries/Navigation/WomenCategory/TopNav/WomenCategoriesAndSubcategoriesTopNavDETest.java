@@ -88,7 +88,7 @@ public class WomenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		womenCategoryPage.womenCategory();
-		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
+		womenFootwearPage = womenCategoryPage.returnWomenFootwearPageDE();
 		womenCategoryPage.womenCategory();
 		womenFootwearRidingPage = womenFootwearPage.returnWomenFootwearRidingCategoryPageDE();
 		womenCategoryPage.womenCategory();

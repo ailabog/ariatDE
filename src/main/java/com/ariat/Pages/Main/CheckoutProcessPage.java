@@ -53,9 +53,16 @@ public class CheckoutProcessPage extends BasePage {
 	private By nextPaymentButton = By.cssSelector(".el-button > span > span");
 	private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
 	private By signInLink = By.xpath("//a[text()='Sign In']");
+	private By arrowAddress= By.xpath("//i[@class='el-select__caret el-input__icon el-icon-arrow-up']");
+	private By addressLocator = By.xpath("//span[contains(text(), '6JqMx - Basarabia Blvd, No 62')]");
 	
 	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
+	}
+	
+	public void selectAddress() {
+		WebDriverUtils.clickOnElementWithWait(driver, arrowAddress);
+		WebDriverUtils.clickOnElementWithWait(driver, addressLocator);
 	}
 
 	public void clickEditBag() {

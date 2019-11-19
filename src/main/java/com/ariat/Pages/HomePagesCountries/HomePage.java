@@ -71,7 +71,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 			}
 			return new HomePageUK(driver);
-
+	
 		case "(Deutschland)":
 			logger.info("I choose Deutsch Deutschland as location");
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
