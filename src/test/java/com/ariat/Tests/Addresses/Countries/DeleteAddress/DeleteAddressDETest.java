@@ -43,6 +43,7 @@ public class DeleteAddressDETest extends BaseTest {
 	public static final String POST_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String PHONE = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
+
 	private static final String EMAIL = "aila.bogasieru@ariat.com";
 	private static final String PASSWORD = "Parola12345!";
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
@@ -52,7 +53,6 @@ public class DeleteAddressDETest extends BaseTest {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-
 	
 	@Test(priority=0)
 	public void addAddressDETest() {
@@ -62,22 +62,15 @@ public class DeleteAddressDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutsch");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "Deutsch", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterFName("A");
-		addAddressPage.enterLName("B");
-		addAddressPage.enterAddress1("Basarabia Blvd, No 62");
-		addAddressPage.enterCity(CITY);
-		addAddressPage.selectCountry("Deutschland");
-		addAddressPage.enterPostCode(POST_CODE);
-		addAddressPage.enterPhone(PHONE);
-		addAddressPage.enterAddressId(ADDRESS_ID);
+		addAddressPage.setDetailsAddress("A", "B", "Basarabia Blvd, No 62", CITY, "Deutschland", POST_CODE, PHONE, ADDRESS_ID);
 		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
 		addressesPage.checkAddressDE(ADDRESS_ID);
 		logger.info("Finishing add address Germany test");
 	}
+	
 	@Test(priority = 1)
 	public void deleteAddressDETest() {
 		logger.info("Starting deleting address Germany test");
@@ -86,8 +79,7 @@ public class DeleteAddressDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutsch");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "Deutsch", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.deleteAddressCreatedNoDE(ADDRESS_ID);

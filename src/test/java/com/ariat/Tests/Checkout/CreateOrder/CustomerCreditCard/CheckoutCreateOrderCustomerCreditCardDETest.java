@@ -71,8 +71,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
-		signInPage.returningPassword(PASSWORDEXISTENT);
+		signInPage.setLoginDetails(EMAILEXISTENT, "Deutsch", PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = myAccountPage.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
@@ -99,8 +98,7 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAILEXISTENT, "Deutsch");
-		signInPage.returningPassword(PASSWORDEXISTENT);
+		signInPage.setLoginDetails(EMAILEXISTENT, "Deutsch", PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();

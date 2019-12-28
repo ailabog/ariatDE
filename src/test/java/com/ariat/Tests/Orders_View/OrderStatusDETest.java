@@ -52,8 +52,7 @@ public class OrderStatusDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "Deutsch");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "Deutsch", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myOrdersPage = myAccountPage.returnMyOrdersPageOrderStatusMiddleNavDE();
 		logger.info("Finishing order status test...");

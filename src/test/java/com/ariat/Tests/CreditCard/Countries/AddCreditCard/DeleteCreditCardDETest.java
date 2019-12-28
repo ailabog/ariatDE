@@ -55,8 +55,7 @@ public class DeleteCreditCardDETest extends BaseTest{
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL,"Deutsch");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "Deutsch", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNavDE();
 	    paymentInfoPage.deleteCreditCardNoDE("name",typeCard.VISA.getName() , "01/2029");

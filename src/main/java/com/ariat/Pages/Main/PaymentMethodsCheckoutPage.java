@@ -39,6 +39,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By arrowExpYear = By.cssSelector(".el-form-item:nth-child(8) .el-select__caret");
 	private By buyNowBtn = By.id("confirmpayment");
 	private By typeCardList = By.id("c-ct");
+	private By expirationDateMonth = By.xpath("//span[text()='June']");
 
 	protected PaymentMethodsCheckoutPage(WebDriver driver) {
 		super(driver);
@@ -91,6 +92,25 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 			throw new RuntimeException("Language" + optionMethod + "not supported");
 		}
 	}
+	
+	public void setPaymentDetailsSecureCheckout(String cardNameValue, String cardNumberValue, String securityCardValue) {
+		WebDriverUtils.scroll350Down(driver, nameText);
+		WebDriverUtils.enterTextBox(driver, nameText, cardNameValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.enterTextBox(driver, cardNo, cardNumberValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scroll350Down(driver, arrowExpMonth);
+		WebDriverUtils.clickOnElementWithWait(driver, arrowExpMonth);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonthDE);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, arrowExpYear);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, expirationDateYear);
+		WebDriverUtils.enterTextBox(driver, securityCode, securityCardValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
 
 	public void enterCardName(String cardNameValue) {
 		logger.info("Entering card name..");
@@ -167,7 +187,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	}
 
 	public void reviewOrder() {
-		 WebDriverUtils.scroll350Down(driver, reviewOrderBtn);
+		 WebDriverUtils.scroll500Down(driver, reviewOrderBtn);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtn);
 	}

@@ -46,6 +46,8 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
+	public static final String EMAIL = "aila.bogasieru@ariat.com";
+	public static final String PASSWORD = "Parola12345!";
 	public static final String EMAIL_WISHLIST = "aila.bogasieru@ariat.com";
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
 	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
@@ -63,8 +65,7 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Deutsch");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails(EMAIL, "Deutsch", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
@@ -85,8 +86,7 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Deutsch");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails(EMAIL, "Deutsch", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
@@ -107,8 +107,7 @@ public class OperationsWishListWomenCategoryDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Deutsch");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails(EMAIL, "Deutsch", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();

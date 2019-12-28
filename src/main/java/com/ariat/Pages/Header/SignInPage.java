@@ -56,7 +56,7 @@ public class SignInPage extends BasePage {
 		super(driver);
 	}
 
-	public void returningCustomer(String email, String language) {
+	public void setLoginDetails(String email, String language, String password) {
 		switch (language) {
 		case "EnglishUK":
 			logger.info("Entering information for an existing customer: email address", email);
@@ -82,10 +82,6 @@ public class SignInPage extends BasePage {
 		default:
 			throw new RuntimeException("Language" + language + "not supported");
 		}
-	}
-
-	public void returningPassword(String password) {
-		logger.info("Entering information for an existing customer: password", password);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
 	}
@@ -124,7 +120,6 @@ public class SignInPage extends BasePage {
 		logger.info("Closing the forgot password dialog");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, closeButton);
-		
 	}
 
 	public void closeForgot() {

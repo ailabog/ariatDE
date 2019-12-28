@@ -79,8 +79,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "Deutsch");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails(EMAIL, "Deutsch", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
@@ -124,14 +123,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		glovesProductPage.selectAttributeSize("7");
 		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
-		createAccountPage.firstName(FIRST_NAME);
-		createAccountPage.lastNameInfo(LAST_NAME);
-		createAccountPage.selectBirthMonth(BIRTH_MONTH);
-		createAccountPage.selectBirthDay(BIRTH_DAY);
-		createAccountPage.enterEmail(EMAIL);
-		createAccountPage.confirmEmail(EMAIL);
-		createAccountPage.enterPassword(PASSWORD);
-		createAccountPage.confirmPassword(PASSWORD);
+		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, EMAIL, EMAIL, PASSWORD, PASSWORD);
 		myAccountWishListPage = createAccountPage.returnMyAccountWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList create account test.");
 	} 

@@ -24,15 +24,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By selectOptionBE = By.xpath("//li//span[contains(text(), 'Belgium')]");
 	private By selectOptionDE = By.xpath("//li//span[contains(text(), 'Deutschland')]");
 	private By selectOptionFR = By.xpath("//li//span[contains(text(), 'Belgique')]");
-	private By firstName = By.name("firstName");
-	private By lastName = By.name("lastName");
-	private By address = By.name("address1");
-	private By address1 = By.name("address2");
-	private By city = By.name("city");
-	private By zipCode = By.name("zipcode");
 	private By checkCheckBoxBilling = By.xpath("//input[@value='Use this address for Billing']");
-	private By mobile = By.name("phone");
-	private By email = By.name("email");
 	private By addToAddressBoxCheck = By.xpath("//input[@vlaue='Add to Address Book']");
 	private By stayInTouchCheck = By
 			.xpath("//input[@value='Stay in touch. Learn about our new products and special offers first!']");
@@ -54,11 +46,39 @@ public class CheckoutProcessPage extends BasePage {
 	private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
 	private By signInLink = By.xpath("//a[text()='Sign In']");
 	private By arrowAddress= By.xpath("//i[@class='el-select__caret el-input__icon el-icon-arrow-up']");
-	private By addressLocator = By.xpath("//span[contains(text(), '6JqMx - Basarabia Blvd, No 62')]");
+	private By addressLocator = By.xpath("//span[contains(text(), '1el1r - Basarabia Blvd, No 62')]");
+	private By firstName = By.name("firstName");
+	private By lastName = By.name("lastName");
+	private By address = By.name("address1");
+	private By city = By.name("city");
+	private By zipCode = By.name("zipcode");
+	private By mobile = By.name("phone");
+	private By email = By.name("email");
 	
 	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
 	}
+	
+	public void setInfoAccountSecureCheckoutDE(String nameValue, String lastValue, String addressValue, String cityValue, String zipCodeValue, String mobileValue, String emailValue)
+	 {
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, firstName, nameValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, lastName, lastValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, address, addressValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, city, cityValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+	WebDriverUtils.clickOnElementWithWait(driver, selectOptionDE);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, zipCode, zipCodeValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, mobile, mobileValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, email, emailValue);
+}
 	
 	public void selectAddress() {
 		WebDriverUtils.clickOnElementWithWait(driver, arrowAddress);
@@ -109,65 +129,16 @@ public class CheckoutProcessPage extends BasePage {
 			throw new RuntimeException("Language" + optionCountry + "not supported");
 		}
 	}
-
-	public void enterFName(String nameValue) {
-		logger.info("Entering first name..");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, firstName, nameValue);
-	}
-
+	
 	public void closeWindowAddress() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, closeWindowAddressBtn);
-	}
-
-	public void enterLName(String lastValue) {
-		logger.info("Entering last name..");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, lastName, lastValue);
-	}
-
-	public void enterAddress(String addressValue) {
-		logger.info("Entering address address..");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, address, addressValue);
-	}
-
-	public void enterAddress1(String addressValue1) {
-		logger.info("Entering address1 name..");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, address1, addressValue1);
-	}
-
-	public void enterCity(String cityValue) {
-		logger.info("Entering city name..");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, city, cityValue);
-	}
-
-	public void enterZipCode(String zipCodeValue) {
-		logger.info("Entering zip code..");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, zipCode, zipCodeValue);
-	
 	}
 
 	public void checkBillingCheckBox() {
 		logger.info("Checking billing address the same..");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, checkCheckBoxBilling);
-	}
-
-	public void enterMobile(String mobileValue) {
-		logger.info("Entering mobile phone..");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, mobile, mobileValue);
-	}
-
-	public void enterEmail(String emailValue) {
-		logger.info("Entering email..");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, email, emailValue);
 	}
 
 	public void checkAddToAddressBox() {

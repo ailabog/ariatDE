@@ -241,7 +241,6 @@ public class WomenCategoryPage extends BasePage {
 		return new WomenAccessoriesPage(driver);
 	}
 	
-	
 	public WomenAccessoriesPage returnWomenAccessoriesCategoryLeftNavPageDE() {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, womenAccesoriesCategoryLefytNavDE);
@@ -296,5 +295,4 @@ public class WomenCategoryPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(womenText));
 		return new WomenCategoryPage(driver);
 	}
-
 }

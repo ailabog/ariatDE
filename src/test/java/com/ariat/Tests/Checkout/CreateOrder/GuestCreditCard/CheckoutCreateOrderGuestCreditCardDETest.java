@@ -80,22 +80,10 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPageDE();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterFName(FIRST_NAME);
-		checkoutProcessPage.enterLName(LAST_NAME);
-		checkoutProcessPage.enterAddress(ADDRESS);
-		checkoutProcessPage.enterAddress1(ADDRESS1);
-		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("Deutschland");
-		checkoutProcessPage.enterCity(CITY);
-		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail(EMAIL);
+		checkoutProcessPage.setInfoAccountSecureCheckoutDE(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
-		paymentMethodsCheckoutPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		paymentMethodsCheckoutPage.selectExpirationMonthDE();
-		paymentMethodsCheckoutPage.selectExpirationYear();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(), typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
@@ -103,7 +91,7 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 	
 	@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedVisaDE() {
-		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
+		logger.info("Starting checkout -> create new order without being logged credit card Master Card test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -116,22 +104,10 @@ public class CheckoutCreateOrderGuestCreditCardDETest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPageDE();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.enterFName(FIRST_NAME);
-		checkoutProcessPage.enterLName(LAST_NAME);
-		checkoutProcessPage.enterAddress(ADDRESS);
-		checkoutProcessPage.enterAddress1(ADDRESS1);
-		checkoutProcessPage.selectArrow();
-		checkoutProcessPage.selectCountry("Deutschland");
-		checkoutProcessPage.enterCity(CITY);
-		checkoutProcessPage.enterZipCode(ZIP_CODE);
-		checkoutProcessPage.enterMobile(MOBILE);
-		checkoutProcessPage.enterEmail(EMAIL);
+		checkoutProcessPage.setInfoAccountSecureCheckoutDE(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
-		paymentMethodsCheckoutPage.enterCardNo(typeCard.MASTER_CARD.getNumber());
-		paymentMethodsCheckoutPage.selectExpirationMonthDE();
-		paymentMethodsCheckoutPage.selectExpirationYear();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.VISA.getNumber(), typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
