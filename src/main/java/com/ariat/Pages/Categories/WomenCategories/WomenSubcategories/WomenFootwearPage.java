@@ -31,7 +31,7 @@ public class WomenFootwearPage extends BasePage{
 	private By womenFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearWesternCategory = By.linkText("Western");
     private By womenFootwearWesternText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-    private By womenFootwearCasualShoesCategory = By.xpath("//a[contains(text(),'Casual Shoes')])[2]");
+    private By womenFootwearCasualShoesCategory = By.xpath("//a[contains(text(),'Freizeitschuhe')])[2]");
     private By womenFootwearCasualShoesCategoryDE = By.linkText("Freizeitschuhe");
     private By casualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By womenCategory = By.linkText("//a[contains(text(),'Women')]");

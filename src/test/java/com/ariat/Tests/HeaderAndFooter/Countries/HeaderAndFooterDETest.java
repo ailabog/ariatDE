@@ -12,6 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Test Home Page instantiates the browser and access the ariat environment and
@@ -28,13 +29,13 @@ public class HeaderAndFooterDETest extends BaseTest{
 	private HomePageDE homePageDE;
 	private HomePage homePage;
 	private EUCountries euCountry;
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
+
 
 	@Test
 	public void DEHeader() {

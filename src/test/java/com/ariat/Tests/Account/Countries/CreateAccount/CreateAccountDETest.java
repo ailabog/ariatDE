@@ -15,8 +15,10 @@ import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Test create account by instantiating the browser, go to Home page, and calls
@@ -51,14 +53,12 @@ public class CreateAccountDETest extends BaseTest {
     
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
 
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-    @BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	@BeforeTest
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
-
+	
 	@Test(priority = 0)
 	public void createAccountTestDE() {
 		logger.info("Starting create account test");
@@ -94,7 +94,7 @@ public class CreateAccountDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.checkOrder("10002432", "aila.bogasieru@ariat.com", "35435");
+		signInPage.checkOrder("10002432", CredentialsUtils.getProperty("email"), "35435");
 		orderDetailsPage = signInPage.returnOrderDetailsPage();
 		logger.info("Finishing checking valid order test...");
 	}
@@ -109,7 +109,7 @@ public class CreateAccountDETest extends BaseTest {
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
 		signInPage.forgotPasswordClick();
-		signInPage.forgotPasswordEmail(EMAIL);
+		signInPage.forgotPasswordEmail(CredentialsUtils.getProperty("email"));
 		signInPage.ForgotPasswordSend();
 		signInPage.closeForgotPassword();
 		logger.info("Finishing forgot password test...");

@@ -20,8 +20,10 @@ import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Product page - > Women Category -> Add to Wishlist test
@@ -61,16 +63,13 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 	
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
-	public static final String EMAIL_WISHLIST = "aila.bogasieru@ariat.com";
-	
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
-
+	
 	@Test(priority=0)
 	public void productPageWomenCategoryAddToWishListLoggedTestDE() {
 		logger.info("Starting product page -> Women Category Add to Wishlist being logged test...");
@@ -143,7 +142,7 @@ public class ProductAddToWishListWomenCategoryDETest extends BaseTest {
 		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);
-		myAccountWishListPage.findWishListEmail(EMAIL_WISHLIST);
+		myAccountWishListPage.findWishListEmail(CredentialsUtils.getProperty("email"));
 		myAccountWishListPage.findWishListClick();
 		logger.info("Finishing product page -> Women Category find someone's WishList test.");
 	}

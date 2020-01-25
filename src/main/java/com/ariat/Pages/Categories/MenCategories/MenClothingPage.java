@@ -21,7 +21,7 @@ public class MenClothingPage extends BasePage{
 	
 	private By menClothingOutwearCategoryDE = By.linkText("Oberbekleidung");
 	private By menClothingOuterwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-    private By menClothingSweatTshirtAndWoodiesCategory = By.linkText("Sweatshirts & Hoodies");
+    private By menClothingSweatTshirtAndWoodiesCategory = By.linkText("Oberteile & T-Shirts");
     private By menClothingSweatTshirtAndWoodiesText = By.xpath("//h1[contains(text(), 'Sweatshirts & Hoodies für Damen']");
 	private By menClothingTopsAndTshirtsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
 	private By menClothingTopsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");

@@ -14,6 +14,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageDE;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Categories.MenCategories.MenAccessoriesPage;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Pages.Categories.MenCategories.MenClothingPage;
@@ -73,14 +74,12 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 	private MenFeaturedTeamCollectionPage menFeaturedTeamCollectionPage;
 	private MenFeaturedVentTekPage menFeaturedVentTekPage;
 	
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-    @BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	@BeforeTest
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
-
+	
 	@Test(priority = 0)
 	public void topNavMenFootwearCategoriesDE() {
 		logger.info("Starting navigate Men Footwear sub-categories test...");
@@ -162,12 +161,6 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		menFeaturedVentTekPage = menFeaturedPage.returnMenFeaturedVentTekCategoryPage();
 		logger.info("Finishing navigate Men Featured sub-categories test.");
 	} 
-	
-	@AfterTest
-	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
 
 	@AfterSuite
 	public void tearDown() {
@@ -197,6 +190,8 @@ public class MenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		menFeaturedPage.quit();
 		menFeaturedTeamCollectionPage.quit();
 		menFeaturedVentTekPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
 		
 	}
 }

@@ -12,7 +12,9 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PersonalnformationPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
@@ -34,15 +36,10 @@ public class PersonalInformationDETest extends BaseTest {
 	private PersonalnformationPage personalInformationPage;
 	
 
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
-	private static final String PASSWORD = "Parola12345!";
-	private static final String NEW_EMAIL = "aila.bogasieru@yahoo.com";
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
 
 	@Test
@@ -53,14 +50,14 @@ public class PersonalInformationDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "Deutsch", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "Deutsch", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		personalInformationPage = myAccountPage.returnPersonalInfoPageMiddleNav();
 		personalInformationPage.clearEmail();
-		personalInformationPage.enterEmail(NEW_EMAIL);
-		personalInformationPage.confirmEmail(NEW_EMAIL);
-		personalInformationPage.enterPassword(PASSWORD);
-		personalInformationPage.confirmPassword(PASSWORD);
+		personalInformationPage.enterEmail(CredentialsUtils.getProperty("email_US"));
+		personalInformationPage.confirmEmail(CredentialsUtils.getProperty("email_US"));
+		personalInformationPage.enterPassword(CredentialsUtils.getProperty("password"));
+		personalInformationPage.confirmPassword(CredentialsUtils.getProperty("password"));
 		personalInformationPage.saveEdits();
 		logger.info("Update personal information test ended...");
 	}

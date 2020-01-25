@@ -143,6 +143,7 @@ public class CreateAccountPage extends BasePage {
 	}
 	
 	public MyAccountWishListPage returnMyAccountWishListPage() {
+		WebDriverUtils.scroll300(driver, createAccountButton);
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myAccountText));
