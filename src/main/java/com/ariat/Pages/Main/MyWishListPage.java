@@ -39,7 +39,7 @@ public class MyWishListPage extends BasePage {
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
 	private By goBackToWishListEdit = By.cssSelector("span.ui-icon.ui-icon-closethick");
     private By noIteminWishListText = By.xpath("//*[contains[text(), 'You have no items on your wishlist.']");
-    private By removeLinkDE = By.linkText("Entfernen");
+    private By removeLinkDE = By.xpath("//button[@name='dwfrm_wishlist_items_i0_deleteItem' and text()='Remove']");
    	 
     private boolean noItemWishList;
     
@@ -100,6 +100,7 @@ public class MyWishListPage extends BasePage {
 	}
 
 	public void removeProductDE() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, removeLinkDE);
 	}
 

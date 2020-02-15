@@ -46,7 +46,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
 	private By signInLink = By.xpath("//a[text()='Sign In']");
 	private By arrowAddress= By.xpath("//i[@class='el-select__caret el-input__icon el-icon-arrow-up']");
-	private By addressLocator = By.xpath("//span[contains(text(), '1el1r - Basarabia Blvd, No 62')]");
+	private By addressLocator = By.xpath("//span[contains(text(), 'zOt3N - Oxford Street')]");
 	private By firstName = By.name("firstName");
 	private By lastName = By.name("lastName");
 	private By address = By.name("address1");

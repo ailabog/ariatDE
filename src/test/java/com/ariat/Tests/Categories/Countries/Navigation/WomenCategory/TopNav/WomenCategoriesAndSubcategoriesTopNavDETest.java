@@ -78,7 +78,7 @@ public class WomenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 	}
 
 
-	@Test(priority = 0)
+   @Test(priority = 0)
 	public void navigateWomenFootwearCategoriesDE() {
 		logger.info("Starting navigate Women Footwear sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -86,7 +86,7 @@ public class WomenCategoriesAndSubcategoriesTopNavDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		womenCategoryPage = homePageDE.returnWomenCategoryPage();
-		womenCategoryPage.womenCategory();
+		//womenCategoryPage.womenCategory();
 		womenFootwearPage = womenCategoryPage.returnWomenFootwearPageDE();
 		womenCategoryPage.womenCategory();
 		womenFootwearRidingPage = womenFootwearPage.returnWomenFootwearRidingCategoryPageDE();

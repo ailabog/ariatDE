@@ -29,13 +29,13 @@ public class WomenClothingPage extends BasePage{
 	
 	private By womenClothingOuterwearCategoryDE = By.linkText("Oberbekleidung");
 	private By womenClothingOuterwearText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-    private By womenClothingSweatTshirtAndWoodiesCatagory = By.linkText("Sweatshirts & Hoodies");
+    private By womenClothingSweatTshirtAndWoodiesCatagory = By.xpath("//a[@class='global-nav-level-3-label ' and text()='Sweatshirts & Hoodies']");
     private By womenClothingSweatTshirtAndWoodiesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenClothingTopsAndTshirtsCategory = By.linkText("Tops & T-Shirts");
+	private By womenClothingTopsAndTshirtsCategory = By.xpath("//a[@class='global-nav-level-3-label ' and text()='Oberteile & T-Shirts']");
 	private By womenClothingTopsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-	private By womenClothingShowCategory = By.linkText("Show");
+	private By womenClothingShowCategory = By.xpath("//a[@class='global-nav-level-3-label ' and text()='Turnierbekleidung']");
 	private By womenClothingShowText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenClothingBreechesAndTightsCategory = By.linkText("Reithosen- & leggings");
+	private By womenClothingBreechesAndTightsCategory = By.xpath("//a[@class='global-nav-level-3-label ' and text()='Reithosen- & leggings']");
 	private By womenClothingBreechesAndTightsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By breechText = By.xpath("//*contains[text(),'Whipstitch Knee Patch Breech']");
 	private By breechProduct = By.cssSelector("#d4131ac676fae12f026a30c6aa .psd-4-full-width-video-module-1__image");

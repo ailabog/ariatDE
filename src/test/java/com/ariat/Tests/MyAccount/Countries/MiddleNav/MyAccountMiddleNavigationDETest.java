@@ -39,7 +39,7 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 	setPath.setSelenium();
 	}
 
-	@Test(priority = 0)
+/*	@Test(priority = 0)
 	public void myAccountAccessPersonalInfoDETest() {
 		logger.info("Starting personal info Germany test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -123,7 +123,7 @@ public class MyAccountMiddleNavigationDETest extends BaseTest {
 		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing orders Germany test...");
-	}
+	}*/
 
 	@Test(priority = 5)
 	public void myAccountAccessWishListDETest() {

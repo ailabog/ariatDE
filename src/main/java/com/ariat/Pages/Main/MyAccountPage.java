@@ -82,8 +82,8 @@ public class MyAccountPage extends BasePage {
 	private By womenText = By.xpath("//*contains(text(),'Women']");
 	private By logoutTopNavFR = By.xpath("//a[text()='Se deconnecter']");
 	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(), 'Alle Anzeigen')]");
-	private By viewAllWishListLinkDE = By.xpath("//a[contains(text(), 'Alle ansehen')]");
-	private By orderStatusLinkDE = By.xpath("//a[text()='Bestellstatus']");
+	private By viewAllWishListLinkDE = By.xpath("//a[@href='/on/demandware.store/Sites-AriatEU-Site/de_DE/Wishlist-Show' and text()='Alle ansehen']");
+	private By orderStatusLinkDE = By.xpath("//a[@href='/de/de/order-status' and text()='Bestellstatus']");
 
 	public void logoutMiddle() {
 		logger.info("Logging out from the application:");
