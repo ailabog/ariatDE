@@ -30,7 +30,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By saveAndContinueLocationButton = By.id("btnSaveContext");
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
-	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
+	private By listCountries = By.xpath("//ul[@class='chooserDropdown country']");
 	private By countrySelectorWindow = By.xpath("//span[@class='icon icon-full-arrow-down ms_desktop-only']");
 
 	public HomePage(WebDriver driver) {
@@ -71,7 +71,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 			}
 			return new HomePageUK(driver);
-									
+	
 		case "(Deutschland)":
 			logger.info("I choose Deutsch Deutschland as location");
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);

@@ -31,10 +31,19 @@ public class WomenAccessoriesPage extends BasePage{
 	private By womenAccessoriesSocksCategoryDE = By.linkText("Socken");
 	private By womenAccessoriesSocksText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccessoriesGlovesLeftNavDE = By.linkText("Handschuhe");
+	private By womenAccessoriesGlovesLeftNav = By.linkText("Taschen");
     
    		public WomenAccessoriesPage(WebDriver driver) {
 		super(driver);
 	}
+   		
+   		
+   		public WomenAccessoriesGlovesPage returnWomenAccessoriesGlovesCategoryleftNavPage() {
+   			WebDriverUtils.clickOnElementWithWait(driver, womenAccessoriesGlovesLeftNav);
+   			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+   					ExpectedConditions.invisibilityOfElementLocated(womenAccessoriesGlovesText));
+   			return new WomenAccessoriesGlovesPage(driver);
+   		}
 	
 		
 	public WomenAccessoriesHeadwearPage returnWomenAccessoriesHeadwearCategoryPageDE() {

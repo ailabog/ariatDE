@@ -101,7 +101,7 @@ public class CreateAccountDETest extends BaseTest {
 	
 	
 	@Test(priority = 4)
-	public void forgotPasswordTest() {
+	public void forgotPasswordTestDE() {
 		logger.info("Starting forgot password test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

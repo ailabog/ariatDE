@@ -44,6 +44,12 @@ public class MyBagPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, removeLinkDE);
 	}
 	
+	public CheckoutPage returnCheckoutPage() {
+		WebDriverUtils.clickOnElementWithWait(driver, checkoutBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		return new CheckoutPage(driver);
+	}
+	
 	public void cancelFreeGift() {
 		if (WebDriverUtils.findElement(driver, bonusDialog) != null) {
 			WebDriverUtils.clickOnElementWithWait(driver, cancelFreeGift);

@@ -51,15 +51,14 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 	private PaymentMethodsCheckoutPage paymentMethodsCheckoutPage;
 
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String CITY = "Frankfurt";
-	public static final String COUNTRY = "Deutschland";
-
+	public static final String CITY = "London";
+	public static final String COUNTRY = "United Kingdom";
 	private ListOfCreditCards typeCard;
 
 	@BeforeTest
 	public void setSeleniumUP() {
-	SetSelenium setPath = new SetSelenium();
-	setPath.setSelenium();
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
@@ -70,24 +69,24 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "Deutsch", CredentialsUtils.getProperty("password"));
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "Deutsch",
+				CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
-		womenCategoryPage = myAccountPage.returnWomenCategoryPage();
-		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
-		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
-		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		glovesProductPage = homePageDE.returnGlovesProductPage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPageDE();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		try {
-		checkoutProcessPage.selectAddress();
-		} catch(Exception e){ };
-		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		checkoutProcessPage.selectAddress();}
+		catch(Exception e) {
+	    }
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
+		
 		logger.info("Finishing checkout -> create new order being logged credit card Master Card test.");
 	}
 
@@ -99,29 +98,31 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageDE = (HomePageDE) homePage.chooseEULocation(euCountry.DE, euCountry.DE.getCurrencyISO());
 		signInPage = homePageDE.returnSignInPage();
-		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "Deutsch", CredentialsUtils.getProperty("password"));
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "Deutsch",
+				CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPageDE();
-		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPageDE();
+		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPageDE();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		try {
-		checkoutProcessPage.selectAddress();
-		}catch(Exception e) {};
-		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		checkoutProcessPage.selectAddress();}
+		catch(Exception e) {
+		}
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order being logged credit card Visa test.");
 	}
-	
+
 	@AfterTest
-	public void clearBrowserSession() {
+	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		homePageDE.quit();
@@ -136,5 +137,5 @@ public class CheckoutCreateOrderCustomerCreditCardDETest extends BaseTest {
 		myAccountPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

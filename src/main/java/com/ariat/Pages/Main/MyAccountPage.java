@@ -52,7 +52,7 @@ public class MyAccountPage extends BasePage {
 	private By addCardLink = By.xpath("//a[text()='Add Card']");
 	private By addCardLinkDE = By.xpath("//a[text()='Karte hinzufügen']");
 	private By viewAllOrdersLink = By.cssSelector(".myaccount-container__my-orders .myaccount-container__box-link");
-	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[59]");
+	private By viewAllWishListLink = By.cssSelector(".myaccount-container__wishlist .myaccount-container__box-link");
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
 	private By myEmailPrefText = By.xpath("//*[contains(text(),'Email preferences']");
@@ -82,7 +82,6 @@ public class MyAccountPage extends BasePage {
 	private By womenText = By.xpath("//*contains(text(),'Women']");
 	private By logoutTopNavFR = By.xpath("//a[text()='Se deconnecter']");
 	private By viewAllOrdersLinkDE = By.xpath("//a[contains(text(), 'Alle Anzeigen')]");
-	private By viewAllWishListLinkDE = By.xpath("//a[@href='/on/demandware.store/Sites-AriatEU-Site/de_DE/Wishlist-Show' and text()='Alle ansehen']");
 	private By orderStatusLinkDE = By.xpath("//a[@href='/de/de/order-status' and text()='Bestellstatus']");
 
 	public void logoutMiddle() {
@@ -414,7 +413,7 @@ public class MyAccountPage extends BasePage {
 	}
 
 	public MyWishListPage returnMyWishListPageViewAllMiddleNavDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, viewAllWishListLinkDE);
+		WebDriverUtils.clickOnElementWithWait(driver, viewAllWishListLink);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myWishListText));
 		return new MyWishListPage(driver);

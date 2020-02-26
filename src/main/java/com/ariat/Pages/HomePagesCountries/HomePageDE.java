@@ -20,6 +20,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccess
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Pages.Products.CasualShoeProductPage;
+import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class HomePageDE extends BasePage implements List<HomePage> {
@@ -95,9 +96,23 @@ public class HomePageDE extends BasePage implements List<HomePage> {
    
    private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
    private By topsAndTshirtsCategoryDE = By.xpath("//a[text()='Oberteile & T-Shirts']");
+   private By glovesCategory = By.xpath("//a[text()='Gloves']");
+   private By tekGrip = By.xpath("//img[@class='psd-4-full-width-video-module-1__image ms-image-responsive ms-full-width lazyloaded' and @title='Insulated Tek Grip']");
+  	private By tekGripText = By.xpath("//*contains[text()='Tek Grip']");
    
 	protected HomePageDE(WebDriver driver) {
 		super(driver);
+	}
+	
+	public GlovesProductPage returnGlovesProductPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, glovesCategory);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, tekGrip);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(tekGripText));
+		return new GlovesProductPage(driver);
 	}
 	
 	public void checkElementsHeader() {
